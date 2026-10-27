@@ -56,21 +56,21 @@
   .micro { font-size: .82rem; color: var(--muted); margin-top: 12px; }
 
   /* Header + hero */
-  .hero { padding: 12px; }
+  .hero { padding: 0 12px 12px; position: relative; }
   .hero-frame { position: relative; border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; background: var(--green-deep); }
   .hero-frame > img.hero-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
   .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,35,29,.6), rgba(22,35,29,.5) 40%, rgba(22,35,29,.88)); }
-  .nav { position: relative; z-index: 3; padding: 20px 24px; display: flex; align-items: center; gap: 32px; color: #fff; }
+  .nav { position: relative; z-index: 3; padding: 18px 12px; display: flex; align-items: center; gap: 32px; color: var(--ink); }
   .brand { flex-shrink: 0; }
   .brand img { width: clamp(220px, 33vw, 460px); height: auto; }
   .nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: .95rem; font-weight: 500; }
-  .nav ul a:hover { opacity: .75; }
+  .nav ul a:hover { color: var(--green); }
   .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
-  .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
-  .mobile-menu { display: none; position: absolute; z-index: 4; top: 96px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
+  .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--green); color: #fff; font-size: 1.2rem; cursor: pointer; }
+  .mobile-menu { display: none; position: absolute; z-index: 4; top: 88px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
   .mobile-menu.open { display: block; }
   .mobile-menu a { display: block; padding: 14px 16px; border-radius: 14px; font-weight: 500; }
-  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 48px; padding: 32px 56px 56px; color: #fff; }
+  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 48px; padding: 56px 56px 56px; color: #fff; }
   .hero-content .eyebrow { font-size: .85rem; color: var(--yellow); font-weight: 600; margin-bottom: 14px; }
   .hero-content h1 { font-size: clamp(2.6rem, 5.4vw, 4.4rem); }
   .hero-content p { color: rgba(255,255,255,.85); font-size: 1.1rem; max-width: 32em; margin: 18px 0 28px; }
@@ -245,7 +245,7 @@
     .menu-btn { display: block; }
     .nav .pill-cta { display: none; }
     .brand img { width: 210px; }
-    .hero-content { grid-template-columns: 1fr; padding: 8px 20px 44px; gap: 28px; text-align: center; }
+    .hero-content { grid-template-columns: 1fr; padding: 32px 20px 44px; gap: 28px; text-align: center; }
     .hero-content p { margin-left: auto; margin-right: auto; }
     .hero-ctas, .proof { justify-content: center; }
     .hero-cover { width: 150px; grid-row: 1; gap: 14px; }
@@ -274,32 +274,32 @@
 
 <!-- 1. HERO: promise + primary CTA + instant social proof -->
 <div class="hero" id="top">
+  <nav class="nav" aria-label="Main">
+    <a href="#top" class="brand"><img src="assets/logo.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
+    <ul>
+      <li><a href="#inside">Membership</a></li>
+      <li><a href="#rabbi">Rabbi Brezak</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#tips">Free tips</a></li>
+      <li><a href="#webinars">Webinars</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#join" class="pill pill-cta" style="padding:10px 20px">Join now</a>
+      <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" onclick="this.classList.remove('open')">
+    <a href="#inside">Membership</a>
+    <a href="#rabbi">Rabbi Brezak</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#tips">Free tips</a>
+    <a href="#webinars">Webinars</a>
+    <a href="#faq">FAQ</a>
+    <a href="#join"><b>Join now →</b></a>
+  </div>
   <div class="hero-frame">
     <img class="hero-bg" src="https://www.artscroll.com/images/covers/p/ptth.jpg" alt="">
-    <nav class="nav" aria-label="Main">
-      <a href="#top" class="brand"><img src="assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
-      <ul>
-        <li><a href="#inside">Membership</a></li>
-        <li><a href="#rabbi">Rabbi Brezak</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#tips">Free tips</a></li>
-        <li><a href="#webinars">Webinars</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="#join" class="pill pill-cta" style="padding:10px 20px">Join now</a>
-        <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
-      </div>
-    </nav>
-    <div class="mobile-menu" onclick="this.classList.remove('open')">
-      <a href="#inside">Membership</a>
-      <a href="#rabbi">Rabbi Brezak</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#tips">Free tips</a>
-      <a href="#webinars">Webinars</a>
-      <a href="#faq">FAQ</a>
-      <a href="#join"><b>Join now →</b></a>
-    </div>
     <div class="hero-content">
       <div>
         <div class="eyebrow">Under the auspices of Rabbi Dov Brezak</div>
