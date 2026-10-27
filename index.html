@@ -212,6 +212,33 @@
   .sticky span { font-size: .9rem; }
   .sticky .pill { padding: 11px 20px; }
 
+
+  /* Webinar library: auto-scrolling strip, pauses on hover/touch */
+  .library { background: var(--sand); overflow: hidden; }
+  .marquee { margin-top: 40px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .webs { display: flex; gap: 14px; width: max-content; animation: drift 110s linear infinite; padding: 6px 0 10px; }
+  .marquee:hover .webs, .marquee:focus-within .webs, .marquee.paused .webs { animation-play-state: paused; }
+  @keyframes drift { to { transform: translateX(calc(-50% - 7px)); } }
+  .web { width: 310px; flex-shrink: 0; background: #fff; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px; border-top: 5px solid var(--mint); align-self: flex-start; transition: transform .2s ease, box-shadow .2s ease; }
+  .web:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -20px rgba(22,35,29,.4); }
+  .web:nth-child(3n+2) { border-top-color: var(--butter); }
+  .web:nth-child(3n+3) { border-top-color: var(--lav); }
+  .wtop { display: flex; justify-content: space-between; align-items: center; }
+  .wnum { font-family: "Instrument Serif", serif; font-size: 1.6rem; color: var(--muted); }
+  .wprice { background: var(--mint); color: var(--green); font-weight: 700; font-size: .85rem; padding: 4px 12px; border-radius: 999px; }
+  .wprice.free { background: var(--yellow); color: var(--green-deep); }
+  .web h3 { font-size: 1.65rem; min-height: 2.1em; }
+  .wmeta { font-size: .82rem; color: var(--muted); }
+  .web details { border: 0; background: var(--cream); border-radius: 14px; padding: 0 14px; }
+  .web summary { padding: 12px 0; font-size: .88rem; }
+  .web ol { margin: 0 0 14px; padding-left: 20px; color: var(--muted); font-size: .86rem; display: grid; gap: 4px; }
+  .web .pill { align-self: flex-start; margin-top: 8px; }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { overflow-x: auto; }
+    .webs { animation: none; }
+    .webs .web[aria-hidden] { display: none; }
+  }
+
   @media (max-width: 960px) {
     .nav ul { display: none; }
     .menu-btn { display: block; }
@@ -231,6 +258,7 @@
     .rabbi-photo { min-height: 360px; }
   }
   @media (max-width: 560px) {
+    .web { width: 270px; }
     .pains { grid-template-columns: 1fr; }
     .rabbi-text, .price-card { padding: 28px; }
     .hero-content h1 { font-size: 2.4rem; }
@@ -254,6 +282,7 @@
         <li><a href="#rabbi">Rabbi Brezak</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#tips">Free tips</a></li>
+        <li><a href="#webinars">Webinars</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-right">
@@ -266,6 +295,7 @@
       <a href="#rabbi">Rabbi Brezak</a>
       <a href="#reviews">Reviews</a>
       <a href="#tips">Free tips</a>
+      <a href="#webinars">Webinars</a>
       <a href="#faq">FAQ</a>
       <a href="#join"><b>Join now →</b></a>
     </div>
@@ -335,7 +365,7 @@
       <div class="benefit"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7a5a12" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><div><h3>The A–Z's of Parenting Teenagers</h3><p>Guidance for the unique challenges and opportunities of the teenage years.</p></div></div>
       <div class="benefit"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34407a" stroke-width="1.8" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span><div><h3>A Burst of Emunah &amp; Encouragement</h3><p>Weekly chizuk to carry you through the week.</p></div></div>
       <div class="benefit"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7a3a26" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h3>Members-only Q&amp;A</h3><p>Send your question and hear Rabbi Brezak answer it.</p></div></div>
-      <div class="benefit"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h3>Discounts on the webinar library</h3><p>Past webinar series to watch anytime, at a member price.</p></div></div>
+      <div class="benefit"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><h3>Discounts on the webinar library</h3><p>15 past webinar series to listen to anytime, at a member price.</p></div></div>
     </div>
   </div>
 </section>
@@ -449,6 +479,234 @@
   </div>
 </section>
 
+<!-- 11b. WEBINAR LIBRARY: past series for purchase -->
+<section id="webinars" class="library">
+  <div class="wrap">
+    <div class="center">
+      <span class="tag">A World of Chinuch</span>
+      <h2>The webinar <em>library</em></h2>
+      <p class="lead">Past webinar series by Rabbi Brezak, ready to listen to anytime. After you purchase, you'll get an email within 48 hours with a link to download the mp3 recordings.</p>
+    </div>
+    <div class="marquee" ontouchstart="this.classList.toggle('paused')">
+    <div class="webs" id="webs">
+      <article class="web">
+        <div class="wtop"><span class="wnum">01</span><span class="wprice">$17</span></div>
+        <h3>Imparting the Joy of Yiddishkeit</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>The Tefilla Routine</li><li>Experiencing a connection</li><li>Cultivating a Love for Torah</li><li>Building Emunah</li><li>Hashem Loves You</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">02</span><span class="wprice">$17</span></div>
+        <h3>Learn to Communicate with Your Child</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Gaining your child&#x27;s trust</li><li>The art of listening</li><li>Effective discussions</li><li>Teaching, motivating &amp; correcting</li><li>Direct and indirect influence</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">03</span><span class="wprice">$17</span></div>
+        <h3>Become a Strong Parent</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Button Pressing</li><li>Negative attention</li><li>Power Struggles</li><li>Control, Locomotive, Protective and other weak parenting styles</li><li>Becoming an Empowered Parent</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">04</span><span class="wprice">$17</span></div>
+        <h3>Putting an End to Sibling Rivalry</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Children&#x27;s Fights: When to stay out, when and how to get involved</li><li>Don&#x27;t Just React, Proact: The detriments of fighting and the benefits of working together</li><li>Practice Makes Perfect: Tools</li><li>Victims and Bullies: Stop feeding, start building</li><li>More on rivalry: How to Deal with Jealousy</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">05</span><span class="wprice">$17</span></div>
+        <h3>Upgrade Your Shabbos Table</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>The Shabbos Table and Me: Preparing myself for a wonderful experience</li><li>What do I do? Tools for Engaging and Occupying Your Children</li><li>Free for All? Positive Ways to Create Structure and Order</li><li>A Positive Erev Shabbos? Eliciting Cooperation and Effective Preparation</li><li>The Obstacle Course</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">06</span><span class="wprice">$17</span></div>
+        <h3>Raising a Positive and Resilient Child</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Dealing with Competition, Jealousy, and Negative Attitudes</li><li>Teaching Resilience</li><li>Dealing with the Bitter &amp; Negative Child</li><li>Building a Healthy Esteem in Your Child</li><li>Making Yiddishkeit a Positive Experience</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">07</span><span class="wprice">$17</span></div>
+        <h3>Effective Discipline</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>7 Rules of Assertiveness</li><li>Consequences &amp; Assertiveness +</li><li>She is out of control</li><li>Discipline to avoid</li><li>Discipline with LOVE &amp; Discipline because you LOVE</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">08</span><span class="wprice">$17</span></div>
+        <h3>Effective Discipline for Defiant Children</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Feeling of Control</li><li>On the Child&#x27;s Side</li><li>Motivate your Child</li><li>Making it Easier to Listen</li><li>The Obstacle Course</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">09</span><span class="wprice">$17</span></div>
+        <h3>Chutzpah: The Curse, the Blessing</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>What is Chutzpah? What is it not? And what can I do about it?</li><li>Different Types of Chutzpah and how to respond effectively</li><li>Resolving the Chutzpah problem from the root</li><li>Why am I stuck? How can I get unstuck?</li><li>Harnessing Chutzpah for Success</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">10</span><span class="wprice">$17</span></div>
+        <h3>Empowering You, the Parent</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>The Renewed Parent: Learning to recharge</li><li>The Successful Parent: Setting yourself up for success</li><li>The Confident Parent: Gaining and maintaining confidence</li><li>The Resilient Parent: Overcoming obstacles</li><li>The Motivated Parent: Parenting happily through Emunah, Simcha and gratitude</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">11</span><span class="wprice free">Free</span></div>
+        <h3>Preparing Your Family for Moshiach</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>What, Why, How? Explaining the Geula to our children</li><li>A Mouth of Kindliness: Keeping children away from lashon hora and onaas devarim</li><li>A Heart Full of Love: Eradicating sinas chinam in our homes</li><li>Living Emunah: Practical tools for living the Emunah you learn</li><li>A Nation Alone: Purifying our children from secular influence</li></ol></details>
+        <a href="https://drive.google.com/drive/folders/18QR-2ghC4FRgqQlhr5MHzio9feDbKF7o?usp=sharing" target="_blank" rel="noopener" class="pill pill-dark">Free download →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">12</span><span class="wprice">$17</span></div>
+        <h3>Surviving Your Teen or Thriving with Your Teen</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary>See the 3 parts</summary><ol><li>Teen vs. Me</li><li>Bridge The Gap</li><li>Together We Stand</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">13</span><span class="wprice">$17</span></div>
+        <h3>Shalom Bayis vs. Chinuch</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary>See the 3 parts</summary><ol><li>Areas of Conflict, Solutions, Resolutions</li><li>United We Stand?</li><li>Putting it into practice</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">14</span><span class="wprice">$17</span></div>
+        <h3>Helping Your Children Stay Safe</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary>See the 5 parts</summary><ol><li>Predators</li><li>Technology</li><li>Negative friends</li><li>Books, entertainment &amp; recreation</li><li>Overindulgence</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web">
+        <div class="wtop"><span class="wnum">15</span><span class="wprice">$17</span></div>
+        <h3>Becoming a Positive Family</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary>See the 3 parts</summary><ol><li>What is it? Is it important? Is it a priority?</li><li>Tools and techniques for transforming your family</li><li>Adjusting, changing, and removing the patterns that prevent transformation</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">01</span><span class="wprice">$17</span></div>
+        <h3>Imparting the Joy of Yiddishkeit</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>The Tefilla Routine</li><li>Experiencing a connection</li><li>Cultivating a Love for Torah</li><li>Building Emunah</li><li>Hashem Loves You</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">02</span><span class="wprice">$17</span></div>
+        <h3>Learn to Communicate with Your Child</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Gaining your child&#x27;s trust</li><li>The art of listening</li><li>Effective discussions</li><li>Teaching, motivating &amp; correcting</li><li>Direct and indirect influence</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">03</span><span class="wprice">$17</span></div>
+        <h3>Become a Strong Parent</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Button Pressing</li><li>Negative attention</li><li>Power Struggles</li><li>Control, Locomotive, Protective and other weak parenting styles</li><li>Becoming an Empowered Parent</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">04</span><span class="wprice">$17</span></div>
+        <h3>Putting an End to Sibling Rivalry</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Children&#x27;s Fights: When to stay out, when and how to get involved</li><li>Don&#x27;t Just React, Proact: The detriments of fighting and the benefits of working together</li><li>Practice Makes Perfect: Tools</li><li>Victims and Bullies: Stop feeding, start building</li><li>More on rivalry: How to Deal with Jealousy</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">05</span><span class="wprice">$17</span></div>
+        <h3>Upgrade Your Shabbos Table</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>The Shabbos Table and Me: Preparing myself for a wonderful experience</li><li>What do I do? Tools for Engaging and Occupying Your Children</li><li>Free for All? Positive Ways to Create Structure and Order</li><li>A Positive Erev Shabbos? Eliciting Cooperation and Effective Preparation</li><li>The Obstacle Course</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">06</span><span class="wprice">$17</span></div>
+        <h3>Raising a Positive and Resilient Child</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Dealing with Competition, Jealousy, and Negative Attitudes</li><li>Teaching Resilience</li><li>Dealing with the Bitter &amp; Negative Child</li><li>Building a Healthy Esteem in Your Child</li><li>Making Yiddishkeit a Positive Experience</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">07</span><span class="wprice">$17</span></div>
+        <h3>Effective Discipline</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>7 Rules of Assertiveness</li><li>Consequences &amp; Assertiveness +</li><li>She is out of control</li><li>Discipline to avoid</li><li>Discipline with LOVE &amp; Discipline because you LOVE</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">08</span><span class="wprice">$17</span></div>
+        <h3>Effective Discipline for Defiant Children</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Feeling of Control</li><li>On the Child&#x27;s Side</li><li>Motivate your Child</li><li>Making it Easier to Listen</li><li>The Obstacle Course</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">09</span><span class="wprice">$17</span></div>
+        <h3>Chutzpah: The Curse, the Blessing</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>What is Chutzpah? What is it not? And what can I do about it?</li><li>Different Types of Chutzpah and how to respond effectively</li><li>Resolving the Chutzpah problem from the root</li><li>Why am I stuck? How can I get unstuck?</li><li>Harnessing Chutzpah for Success</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">10</span><span class="wprice">$17</span></div>
+        <h3>Empowering You, the Parent</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>The Renewed Parent: Learning to recharge</li><li>The Successful Parent: Setting yourself up for success</li><li>The Confident Parent: Gaining and maintaining confidence</li><li>The Resilient Parent: Overcoming obstacles</li><li>The Motivated Parent: Parenting happily through Emunah, Simcha and gratitude</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">11</span><span class="wprice free">Free</span></div>
+        <h3>Preparing Your Family for Moshiach</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>What, Why, How? Explaining the Geula to our children</li><li>A Mouth of Kindliness: Keeping children away from lashon hora and onaas devarim</li><li>A Heart Full of Love: Eradicating sinas chinam in our homes</li><li>Living Emunah: Practical tools for living the Emunah you learn</li><li>A Nation Alone: Purifying our children from secular influence</li></ol></details>
+        <a href="https://drive.google.com/drive/folders/18QR-2ghC4FRgqQlhr5MHzio9feDbKF7o?usp=sharing" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Free download →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">12</span><span class="wprice">$17</span></div>
+        <h3>Surviving Your Teen or Thriving with Your Teen</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 3 parts</summary><ol><li>Teen vs. Me</li><li>Bridge The Gap</li><li>Together We Stand</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">13</span><span class="wprice">$17</span></div>
+        <h3>Shalom Bayis vs. Chinuch</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 3 parts</summary><ol><li>Areas of Conflict, Solutions, Resolutions</li><li>United We Stand?</li><li>Putting it into practice</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">14</span><span class="wprice">$17</span></div>
+        <h3>Helping Your Children Stay Safe</h3>
+        <span class="wmeta">5-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 5 parts</summary><ol><li>Predators</li><li>Technology</li><li>Negative friends</li><li>Books, entertainment &amp; recreation</li><li>Overindulgence</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+      <article class="web" aria-hidden="true">
+        <div class="wtop"><span class="wnum">15</span><span class="wprice">$17</span></div>
+        <h3>Becoming a Positive Family</h3>
+        <span class="wmeta">3-part series · mp3 audio</span>
+        <details><summary tabindex="-1">See the 3 parts</summary><ol><li>What is it? Is it important? Is it a priority?</li><li>Tools and techniques for transforming your family</li><li>Adjusting, changing, and removing the patterns that prevent transformation</li></ol></details>
+        <a href="https://form.jotform.com/210402613239444" target="_blank" rel="noopener" class="pill pill-dark" tabindex="-1">Buy for $17 →</a>
+      </article>
+    </div>
+    </div>
+    <div class="center" style="margin-top:28px">
+      <p class="micro" style="margin-top:0">Hover or tap to pause · Questions about a purchase? <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- 12. FINAL CTA + soft fallback (daily tip) -->
 <div class="final">
   <h2>Your home can feel <em>different.</em></h2>
@@ -467,7 +725,7 @@
     <div class="foot-grid">
       <div><h4>Chinuch LifeLines</h4><p style="margin:0">Empowering Parents · Building Children<br>Under the auspices of Rabbi Dov Brezak<br>1174 E 23rd St, Brooklyn, NY 11210</p></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+17324409437">+1 732-440-9437</a></li><li><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li><li>Office hours 9:00 am – 5:00 pm</li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#join">Membership</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://www.torahanytime.com" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#join">Membership</a></li><li><a href="#webinars">Webinar library</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://www.torahanytime.com" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
     </div>
     <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
   </div>
