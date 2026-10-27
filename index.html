@@ -101,6 +101,8 @@
   .book-cover { aspect-ratio: 2/3; background: linear-gradient(160deg, var(--navy), var(--navy-2)); border: 1px solid rgba(216,188,120,.4); border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-shadow: 0 24px 40px -18px rgba(0,0,0,.6); }
   .book-cover b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--cream); }
   .book-cover span { color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .book-img img { width: 100%; border-radius: 4px; box-shadow: 0 24px 40px -18px rgba(0,0,0,.6); transition: transform .2s ease; }
+  .book-img:hover img { transform: translateY(-4px); }
   .book-grid h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; }
   .book-grid .sub { color: var(--gold); font-weight: 700; margin: 8px 0 16px; }
   .book-grid p { color: rgba(255,250,240,.78); max-width: 40em; margin: 0 0 22px; }
@@ -202,7 +204,7 @@
     section { padding: 40px 0; }
     .topbar .hide-sm { display: none; }
     .hero-grid, .contact-grid, .about-grid, .book-grid, .foot-grid { grid-template-columns: 1fr; }
-    .book-cover { max-width: 200px; }
+    .book-img { max-width: 220px; }
     .videos { grid-template-columns: 1fr; }
     .lead-story { min-height: 480px; }
     .side-stack { grid-template-rows: none; }
@@ -240,7 +242,7 @@
     <ul>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#book">New Book</a></li>
-      <li><a href="#videos">Parenting Made Easy</a></li>
+      <li><a href="#videos">Parenting Made Easier</a></li>
       <li><a href="#membership">Membership</a></li>
       <li><a href="#help">Webinar Library</a></li>
       <li><a href="#">Blog</a></li>
@@ -256,11 +258,11 @@
     <span class="tag">New</span>
     <div class="ticker-track"><div>
       <span>New book: Parenting in Turbulent Times</span>
-      <span>Parenting Made Easy — short video tips you can use today</span>
+      <span>Parenting Made Easier — short video tips you can use today</span>
       <span>Ask Rabbi Brezak: send in your question</span>
       <span>Members get free access to all ongoing programs</span>
       <span>New book: Parenting in Turbulent Times</span>
-      <span>Parenting Made Easy — short video tips you can use today</span>
+      <span>Parenting Made Easier — short video tips you can use today</span>
       <span>Ask Rabbi Brezak: send in your question</span>
       <span>Members get free access to all ongoing programs</span>
     </div></div>
@@ -291,7 +293,7 @@
         </a>
         <a href="#videos" class="side-item">
           <span class="label">Video tips</span>
-          <h2>Parenting Made Easy</h2>
+          <h2>Parenting Made Easier</h2>
           <p>Short video tips you can use today.</p>
         </a>
         <a href="#help" class="side-item">
@@ -305,19 +307,15 @@
 
   <section id="book" class="book-band">
     <div class="wrap book-grid">
-      <div class="book-cover" aria-hidden="true">
-        <span>Rabbi Dov Brezak</span>
-        <b>Parenting in Turbulent Times</b>
-        <span>ArtScroll</span>
-      </div>
+      <a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener" class="book-img"><img src="https://www.artscroll.com/images/covers/p/ptth.jpg" alt="Parenting in Turbulent Times by Rabbi Dov Brezak, book cover"></a>
       <div>
         <span class="kicker gold">New from Rabbi Brezak</span>
         <h2>Parenting in Turbulent Times</h2>
         <div class="sub">Practical strategies from a master educator</div>
         <p>A practical, Torah-based approach to discipline and parenting, drawn from decades of counseling parents: which techniques help children, which backfire, and how to adapt to each child's personality. From the author of the bestselling <em>Chinuch in Turbulent Times</em>. Preface by Rabbi Nosson Scherman. ArtScroll, hardcover.</p>
         <div class="btns">
-          <a href="#" class="btn btn-gold">Order from ArtScroll</a>
-          <a href="#" class="btn btn-ghost">Read an excerpt</a>
+          <a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener" class="btn btn-gold">Order from ArtScroll</a>
+          <a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener" class="btn btn-ghost">Read an excerpt</a>
         </div>
       </div>
     </div>
@@ -358,7 +356,7 @@
 
   <section id="videos" class="dark">
     <div class="wrap">
-      <div class="sec-head"><h2>Parenting Made Easy</h2><a href="#" style="color:var(--gold)">All videos →</a></div>
+      <div class="sec-head"><h2>Parenting Made Easier</h2><a href="#" style="color:var(--gold)">All videos →</a></div>
       <p class="sec-sub">Short video tips you can use today.</p>
       <div class="videos">
         <a href="#" class="video"><div class="frame"><span class="kicker tipno">Tip</span><span class="play"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#16231d"/></svg></span></div><h3>[Video tip title]</h3></a>
