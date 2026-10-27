@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinuch LifeLines — Rabbi Dov Brezak</title>
+<meta name="description" content="Torah-based parenting guidance, programs and coaching under the auspices of Rabbi Dov Brezak.">
+<meta name="theme-color" content="#0b1f3f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1f3f;
+    --navy-2: #141533;
+    --navy-3: #020d1f;
+    --cream: #fffaf0;
+    --red: #e01f26;
+    --gold: #d8bc78;
+    --gray: #efefef;
+    --line: rgba(158,158,158,.25);
+    --ink: #27252a;
+    --muted: #6b6f78;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Archivo, "Segoe UI", Arial, sans-serif; color: var(--ink); background: #fff; line-height: 1.55; -webkit-tap-highlight-color: transparent; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { margin: 0; line-height: 1.1; letter-spacing: -.01em; }
+  section { padding: 56px 0; }
+
+  /* Section heading, news-portal style: red bar + heavy title + rule */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .sec-head::before { content: ""; width: 5px; height: 28px; background: var(--red); }
+  .sec-head h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; }
+  .sec-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .sec-head a { order: 3; font-size: .85rem; font-weight: 700; color: var(--red); white-space: nowrap; }
+  .dark .sec-head h2 { color: var(--cream); }
+
+  /* Top bar + header */
+  .topbar { background: var(--navy-3); color: rgba(255,250,240,.7); font-size: .8rem; }
+  .topbar .wrap { display: flex; justify-content: space-between; height: 34px; align-items: center; gap: 12px; }
+  .topbar a:hover { color: var(--gold); }
+  header { position: sticky; top: 0; z-index: 20; background: var(--navy); border-bottom: 3px solid var(--red); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 67px; gap: 20px; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo img { height: 46px; width: auto; background: var(--cream); border-radius: 6px; padding: 3px 6px; }
+  .logo span { color: var(--cream); font-weight: 900; font-size: 1.15rem; letter-spacing: .02em; }
+  .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .nav ul a { display: block; padding: 8px 14px; color: var(--cream); font-weight: 600; font-size: .95rem; border-radius: 4px; }
+  .nav ul a:hover { background: rgba(255,255,255,.08); }
+  .donate { background: var(--red); color: #fff; font-weight: 800; padding: 10px 20px; border-radius: 4px; font-size: .95rem; }
+  .menu-btn { display: none; background: none; border: 0; color: var(--cream); font-size: 1.7rem; cursor: pointer; }
+
+  /* Ticker */
+  .ticker { background: var(--gray); border-bottom: 1px solid #ddd; overflow: hidden; }
+  .ticker .wrap { display: flex; align-items: center; height: 44px; gap: 14px; }
+  .ticker .tag { background: var(--red); color: #fff; font-weight: 800; font-size: .78rem; padding: 4px 10px; text-transform: uppercase; letter-spacing: .06em; flex-shrink: 0; }
+  .ticker-track { overflow: hidden; flex: 1; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+  .ticker-track div { display: inline-flex; gap: 48px; white-space: nowrap; animation: tick 40s linear infinite; font-weight: 600; font-size: .92rem; }
+  .ticker-track span::before { content: "●"; color: var(--red); font-size: .6em; margin-right: 10px; vertical-align: middle; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track div { animation: none; } }
+
+  /* Hero: big lead story + side stack */
+  .hero { background: var(--navy-2); color: var(--cream); padding: 24px 0 40px; }
+  .hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 15px; min-height: 520px; }
+  .lead-story { position: relative; overflow: hidden; border-radius: 4px; background: var(--navy-3); display: flex; align-items: flex-end; }
+  .lead-story img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .lead-story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(2,13,31,.95)); }
+  .lead-body { position: relative; z-index: 1; padding: 32px; }
+  .kicker { display: inline-block; background: var(--red); color: #fff; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; padding: 4px 10px; margin-bottom: 14px; }
+  .kicker.gold { background: var(--gold); color: var(--navy-3); }
+  .lead-body h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); font-weight: 900; color: var(--cream); }
+  .lead-body p { color: rgba(255,250,240,.82); font-size: 1.08rem; max-width: 36em; margin: 14px 0 22px; }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 4px; font-weight: 800; font-size: .95rem; border: 0; cursor: pointer; font-family: inherit; transition: transform .12s ease; }
+  .btn:active { transform: scale(.97); }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-gold { background: var(--gold); color: var(--navy-3); }
+  .btn-ghost { border: 1.5px solid rgba(255,250,240,.5); color: var(--cream); }
+
+  .side-stack { display: grid; grid-template-rows: repeat(3, 1fr); gap: 15px; }
+  .side-item { background: var(--navy); border-radius: 4px; padding: 22px; display: flex; flex-direction: column; justify-content: center; border-right: 4px solid var(--gold); transition: background .15s; }
+  .side-item:hover { background: #10284f; }
+  .side-item h2 { font-size: 1.2rem; font-weight: 700; color: var(--cream); margin-top: 6px; }
+  .side-item p { margin: 6px 0 0; color: rgba(255,250,240,.65); font-size: .9rem; }
+  .side-item .label { color: var(--gold); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+
+  /* Program cards */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .15s; }
+  .card:hover { box-shadow: 0 10px 24px -12px rgba(11,31,63,.35); }
+  .card .thumb { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--navy), var(--navy-2)); display: flex; align-items: flex-end; padding: 14px; position: relative; }
+  .card .thumb b { font-size: 2.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .card .thumb::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
+  .card .body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+  .card h3 { font-size: 1.12rem; font-weight: 800; color: var(--navy); }
+  .card p { color: var(--muted); font-size: .92rem; margin: 8px 0 14px; flex: 1; }
+  .card a { color: var(--red); font-weight: 800; font-size: .88rem; }
+
+  /* Membership banner */
+  .member { background: var(--navy); color: var(--cream); border-radius: 4px; margin-top: 24px; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; border-left: 6px solid var(--gold); }
+  .member h3 { font-size: 1.5rem; font-weight: 900; }
+  .member p { margin: 6px 0 0; color: rgba(255,250,240,.7); }
+
+  /* About */
+  .about { background: var(--gray); }
+  .about-grid { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: center; }
+  .about-grid img { border-radius: 4px; aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+  .about p { font-size: 1.05rem; color: #3a3d44; }
+  .book { background: #fff; border-left: 5px solid var(--red); padding: 16px 20px; font-weight: 600; }
+
+  /* Consult */
+  .dark { background: var(--navy-2); color: var(--cream); }
+  .services { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  .service { background: var(--navy); border-radius: 4px; padding: 30px; border-top: 4px solid var(--gold); }
+  .service h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+  .service p { color: rgba(255,250,240,.72); margin: 0 0 20px; }
+
+  /* Testimonials */
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+  blockquote { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: 4px; position: relative; }
+  blockquote::before { content: "“"; position: absolute; top: -6px; right: 16px; font-size: 5rem; font-weight: 900; color: var(--gold); line-height: 1; opacity: .5; }
+  blockquote p { font-size: 1.08rem; font-weight: 600; color: var(--navy); margin: 0 0 14px; }
+  blockquote cite { font-style: normal; font-size: .85rem; color: var(--red); font-weight: 700; }
+
+  /* Contact */
+  .contact { background: var(--gray); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .contact-list { list-style: none; padding: 0; margin: 0; background: #fff; border-radius: 4px; }
+  .contact-list li { padding: 16px 20px; border-bottom: 1px solid var(--line); }
+  .contact-list strong { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--red); }
+  form { display: grid; gap: 10px; }
+  input, textarea { width: 100%; font: inherit; font-size: 16px; padding: 14px 16px; border: 1px solid #d1d5db; border-radius: 4px; background: #fff; }
+  textarea { min-height: 130px; resize: vertical; }
+
+  footer { background: var(--navy-3); color: rgba(255,250,240,.6); padding: 32px 0; font-size: .88rem; border-top: 3px solid var(--red); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 1000px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+    .quotes { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 800px) {
+    section { padding: 40px 0; }
+    .topbar .hide-sm { display: none; }
+    .hero-grid, .services, .contact-grid, .about-grid { grid-template-columns: 1fr; }
+    .lead-story { min-height: 460px; }
+    .side-stack { grid-template-rows: none; }
+    .about-grid img { max-width: 280px; }
+    .menu-btn { display: block; }
+    .nav ul { display: none; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; background: var(--navy); padding: 8px 0 16px; border-bottom: 3px solid var(--red); }
+    .nav ul.open { display: flex; }
+    .nav ul a { padding: 14px 20px; }
+    .nav .donate { display: none; }
+    .logo span { display: none; }
+  }
+  @media (max-width: 520px) {
+    .cards { grid-template-columns: 1fr; }
+    .lead-body { padding: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Under the auspices of Rabbi Dov Brezak</span>
+    <span><a href="tel:+17324409437">+1 732-440-9437</a><span class="hide-sm"> · <a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></span></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <img src="https://img1.wsimg.com/isteam/ip/7a2c51e0-f788-41e8-8ad6-d34f6f403e54/logo%20chinuch%20lifelines%20no%20background.png/:/rs=h:200,cg:true,m/qt=q:95" alt="Chinuch LifeLines">
+      <span>CHINUCH LIFELINES</span>
+    </a>
+    <ul>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#about">Rabbi Brezak</a></li>
+      <li><a href="#consultations">Consultations</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#donate" class="donate">Donate</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="wrap">
+    <span class="tag">New</span>
+    <div class="ticker-track"><div>
+      <span>Parenting Made Easier — new tips every week</span>
+      <span>Ask Rabbi Brezak: send in your question</span>
+      <span>Members get free access to all ongoing programs</span>
+      <span>Trained parenting coaches available worldwide</span>
+      <span>Parenting Made Easier — new tips every week</span>
+      <span>Ask Rabbi Brezak: send in your question</span>
+      <span>Members get free access to all ongoing programs</span>
+      <span>Trained parenting coaches available worldwide</span>
+    </div></div>
+  </div>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <article class="lead-story">
+        <img src="https://img1.wsimg.com/isteam/ip/7a2c51e0-f788-41e8-8ad6-d34f6f403e54/r_brezak%20(1).jpg/:/cr=t:0%25,l:14.81%25,w:70.37%25,h:100%25/rs=w:600,h:800,cg:true" alt="Rabbi Dov Brezak">
+        <div class="lead-body">
+          <span class="kicker">Chinuch LifeLines</span>
+          <h1>Practical, Torah-based guidance for raising children today</h1>
+          <p>Workshops, programs and personal coaching that help parents around the world build calmer homes and closer relationships with their children.</p>
+          <div class="btns">
+            <a href="#programs" class="btn btn-red">Explore programs</a>
+            <a href="#consultations" class="btn btn-ghost">Book a consultation</a>
+          </div>
+        </div>
+      </article>
+      <div class="side-stack">
+        <a href="#" class="side-item">
+          <span class="label">Video series</span>
+          <h2>Parenting Made Easier</h2>
+          <p>Short, practical tips from Rabbi Brezak.</p>
+        </a>
+        <a href="#" class="side-item">
+          <span class="label">Webinar catalog</span>
+          <h2>A World of Chinuch</h2>
+          <p>Previous webinar series, available to purchase.</p>
+        </a>
+        <a href="#" class="side-item">
+          <span class="label">Workshop</span>
+          <h2>Pico Workshop</h2>
+          <p>Details and registration.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="sec-head"><h2>Ongoing programs</h2><a href="#">All programs →</a></div>
+      <div class="cards">
+        <article class="card"><div class="thumb"><b>A–Z</b></div><div class="body"><h3>The A–Z's of Parenting</h3><p>A complete course in the everyday skills of raising children with warmth and structure.</p><a href="#">Learn more →</a></div></article>
+        <article class="card"><div class="thumb"><b>A–Z</b></div><div class="body"><h3>The A–Z's of Parenting Teenagers</h3><p>Guidance for the unique challenges and opportunities of the teenage years.</p><a href="#">Learn more →</a></div></article>
+        <article class="card"><div class="thumb"><b>EM·EN</b></div><div class="body"><h3>A Burst of EMunah &amp; ENcouragement</h3><p>Short, uplifting chizuk for parents to carry through the week.</p><a href="#">Learn more →</a></div></article>
+        <article class="card"><div class="thumb"><b>Q&amp;A</b></div><div class="body"><h3>Ask Rabbi Brezak</h3><p>Real questions from parents, answered with practical, Torah-based advice.</p><a href="#">Learn more →</a></div></article>
+      </div>
+      <div class="member" id="membership">
+        <div>
+          <h3>Become a member</h3>
+          <p>Members get free access to all ongoing programs and more.</p>
+        </div>
+        <a href="#" class="btn btn-gold">Join now</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="sec-head"><h2>Rabbi Dov Brezak</h2></div>
+      <div class="about-grid">
+        <img src="https://img1.wsimg.com/isteam/ip/7a2c51e0-f788-41e8-8ad6-d34f6f403e54/r_brezak%20(1).jpg/:/cr=t:0%25,l:14.81%25,w:70.37%25,h:100%25/rs=w:600,h:800,cg:true" alt="Rabbi Dov Brezak">
+        <div>
+          <p>Rabbi Dov Brezak is a leading figure in Jewish education, bringing decades of experience as a parent, principal, author, lecturer and consultant. He addresses the real challenges facing parents and children today with practical techniques grounded in Torah values.</p>
+          <p>He founded Chinuch LifeLines to make this guidance available to every family, with trained parenting coaches ready to help parents around the world.</p>
+          <p class="book">Author of the bestseller <em>Chinuch in Turbulent Times</em> (ArtScroll).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultations" class="dark">
+    <div class="wrap">
+      <div class="sec-head"><h2>Personal guidance</h2></div>
+      <div class="services">
+        <div class="service">
+          <h3>Consultation with Rabbi Brezak</h3>
+          <p>One-on-one consultations by phone or Zoom, focused on your family's specific situation.</p>
+          <a href="mailto:admin@chinuch-lifelines.org?subject=Consultation%20request" class="btn btn-red">Request a consultation</a>
+        </div>
+        <div class="service">
+          <h3>Trained Parenting Coaches</h3>
+          <p>Coaches trained in Rabbi Brezak's approach are available to parents worldwide, at a lower rate.</p>
+          <a href="mailto:admin@chinuch-lifelines.org?subject=Parenting%20coach%20request" class="btn btn-gold">Find a coach</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>What parents say</h2></div>
+      <div class="quotes">
+        <blockquote><p>"I find the workshops informative and practical. The Q&amp;A is great."</p><cite>H.R. · Manchester, UK</cite></blockquote>
+        <blockquote><p>"Thank you so much for the wonderful course. My family and I are gaining tremendously from it."</p><cite>D.L. · Manchester</cite></blockquote>
+        <blockquote><p>"There is a more positive atmosphere at home, and a better relationship with our kids."</p><cite>N.S. · Israel</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>Contact us</h2></div>
+      <div class="contact-grid">
+        <ul class="contact-list">
+          <li><strong>Phone (US)</strong><a href="tel:+17324409437">+1 732-440-9437</a></li>
+          <li><strong>Email</strong><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li>
+          <li><strong>Address</strong>1174 E 23rd St, Brooklyn, NY 11210</li>
+          <li><strong>Hours</strong>9:00 am – 5:00 pm</li>
+        </ul>
+        <form onsubmit="event.preventDefault(); location.href='mailto:admin@chinuch-lifelines.org?subject='+encodeURIComponent('Message from '+this.name.value)+'&body='+encodeURIComponent(this.message.value);">
+          <input name="name" placeholder="Your name" required>
+          <input name="email" type="email" placeholder="Email address" required>
+          <textarea name="message" placeholder="How can we help?"></textarea>
+          <button class="btn btn-red" style="justify-self:start">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="donate">
+  <div class="wrap">
+    <span>© 2026 Chinuch LifeLines · Under the auspices of Rabbi Dov Brezak</span>
+    <span><a href="https://www.torahanytime.com" target="_blank" rel="noopener">TorahAnytime</a> · <a href="#">Donate</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
