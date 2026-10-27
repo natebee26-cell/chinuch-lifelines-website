@@ -89,6 +89,31 @@
   .hero-cover .buy svg { transition: transform .15s ease; }
   .hero-cover:hover .buy svg { transform: translateX(3px); }
 
+  /* Webinar carousel (auto-scrolls, pauses on hover/touch, swipeable) */
+  .webinars { padding: 44px 0 36px; }
+  .web-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+  .web-head .tag { margin-bottom: 10px; }
+  .web-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+  .web-arrows { display: flex; gap: 8px; flex-shrink: 0; }
+  .web-arrows button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--green-deep); display: grid; place-items: center; cursor: pointer; transition: background .15s ease, transform .15s ease; }
+  .web-arrows button:hover { background: var(--mint); }
+  .web-arrows button:active { transform: scale(.94); }
+  .web-track { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; padding: 4px 16px 8px; -webkit-mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+  .web-track::-webkit-scrollbar { display: none; }
+  .web-card { flex: 0 0 300px; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; min-height: 230px; transition: transform .2s ease, box-shadow .2s ease; }
+  .web-card:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -20px rgba(22,35,29,.45); }
+  .web-card:nth-child(4n+1) { background: var(--mint); }
+  .web-card:nth-child(4n+2) { background: var(--butter); }
+  .web-card:nth-child(4n+3) { background: var(--peach); }
+  .web-card:nth-child(4n+4) { background: var(--lav); }
+  .web-card .top { display: flex; justify-content: space-between; align-items: center; }
+  .web-card .kind { font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green); }
+  .web-card .play { width: 44px; height: 44px; border-radius: 50%; background: var(--green); display: grid; place-items: center; transition: transform .15s ease; }
+  .web-card:hover .play { transform: scale(1.08); }
+  .web-card h3 { font-size: 1.7rem; margin: 26px 0 8px; }
+  .web-card p { margin: 0 0 auto; color: var(--muted); font-size: .9rem; }
+  .web-card .go { margin-top: 16px; font-weight: 600; font-size: .9rem; color: var(--green); }
+
   /* Trust strip */
   .trust { padding: 28px 0; border-bottom: 1px solid var(--line); }
   .trust ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 14px 40px; flex-wrap: wrap; color: var(--muted); font-size: .92rem; }
@@ -225,6 +250,8 @@
     .hero-cover .sticker b { font-size: 1.05rem; }
     .hero-cover .buy { font-size: .9rem; padding: 10px 18px; }
     .pains { grid-template-columns: 1fr 1fr; }
+    .web-card { flex-basis: 260px; }
+    .web-arrows { display: none; }
     .inside-grid, .rabbi-grid, .other, .foot-grid { grid-template-columns: 1fr; }
     .steps, .videos, .quotes { grid-template-columns: 1fr; }
     section { padding: 60px 0; }
@@ -250,6 +277,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#top" class="brand"><img src="https://img1.wsimg.com/isteam/ip/7a2c51e0-f788-41e8-8ad6-d34f6f403e54/logo%20chinuch%20lifelines%20no%20background.png/:/rs=h:400,cg:true,m/qt=q:95" alt="Chinuch LifeLines"></a>
       <ul>
+        <li><a href="#webinars">Webinars</a></li>
         <li><a href="#inside">Membership</a></li>
         <li><a href="#rabbi">Rabbi Brezak</a></li>
         <li><a href="#reviews">Reviews</a></li>
@@ -262,6 +290,7 @@
       </div>
     </nav>
     <div class="mobile-menu" onclick="this.classList.remove('open')">
+      <a href="#webinars">Webinars</a>
       <a href="#inside">Membership</a>
       <a href="#rabbi">Rabbi Brezak</a>
       <a href="#reviews">Reviews</a>
@@ -287,6 +316,25 @@
     </div>
   </div>
 </div>
+
+<!-- 1b. WEBINARS: rotating carousel right under the header -->
+<section class="webinars" id="webinars" aria-label="Webinars">
+  <div class="wrap web-head">
+    <div><span class="tag">Webinars</span><h2>Watch Rabbi Brezak's <em>webinars</em></h2></div>
+    <div class="web-arrows">
+      <button type="button" aria-label="Previous webinars" data-dir="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button type="button" aria-label="Next webinars" data-dir="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="web-track" id="web-track">
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+    <a href="#" class="web-card"><div class="top"><span class="kind">Webinar</span><span class="play"><svg width="14" height="16" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#fff"/></svg></span></div><h3>[Webinar title]</h3><p>[Short description]</p><span class="go">Watch →</span></a>
+  </div>
+</section>
 
 <!-- 2. TRUST STRIP: authority right under the fold -->
 <div class="trust">
@@ -487,6 +535,35 @@
   const update = () => sticky.classList.toggle('show', heroGone && !joinVisible);
   new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; update(); }).observe(hero);
   new IntersectionObserver(([e]) => { joinVisible = e.isIntersecting; update(); }, { threshold: .3 }).observe(join);
+
+  // Webinar carousel: endless slow auto-scroll; pauses while hovered or touched.
+  const track = document.getElementById('web-track');
+  [...track.children].forEach(c => { const d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); d.tabIndex = -1; track.appendChild(d); });
+  const half = () => track.scrollWidth / 2;
+  let paused = false, resumeT, pos = 0;
+  const pause = () => { paused = true; clearTimeout(resumeT); };
+  const resume = (ms = 0) => { clearTimeout(resumeT); resumeT = setTimeout(() => { pos = track.scrollLeft; paused = false; }, ms); };
+  track.addEventListener('mouseenter', pause);
+  track.addEventListener('mouseleave', () => resume());
+  track.addEventListener('touchstart', pause, { passive: true });
+  track.addEventListener('touchend', () => resume(2500));
+  track.addEventListener('scroll', () => {
+    if (track.scrollLeft >= half()) track.scrollLeft -= half();
+    else if (track.scrollLeft <= 0 && paused) track.scrollLeft += half();
+  });
+  document.querySelectorAll('.web-arrows button').forEach(b => b.addEventListener('click', () => {
+    pause();
+    if (b.dataset.dir < 0 && track.scrollLeft < 320) track.scrollLeft += half();
+    track.scrollBy({ left: b.dataset.dir * 314, behavior: 'smooth' });
+    resume(3000);
+  }));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const tick = () => {
+      if (!paused) { pos += .5; if (pos >= half()) pos -= half(); track.scrollLeft = pos; }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
 </script>
 
 </body>
