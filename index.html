@@ -60,10 +60,12 @@
   .hero-frame { position: relative; border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; background: var(--green-deep); }
   .hero-frame > img.hero-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
   .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,35,29,.6), rgba(22,35,29,.5) 40%, rgba(22,35,29,.88)); }
-  .nav { position: relative; z-index: 3; padding: 20px 24px; display: flex; align-items: center; gap: 32px; color: #fff; }
+  .nav { position: relative; z-index: 3; padding: 20px 24px; display: flex; align-items: center; gap: 28px; color: #fff; }
   .brand { flex-shrink: 0; }
-  .brand img { width: clamp(220px, 33vw, 460px); height: auto; }
-  .nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: .95rem; font-weight: 500; }
+  .brand img { width: clamp(220px, 28vw, 420px); height: auto; }
+  @media (max-width: 1180px) { .nav ul li:nth-child(n+4) { display: none; } }
+  .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: .92rem; font-weight: 500; white-space: nowrap; }
+  .nav .pill { white-space: nowrap; }
   .nav ul a:hover { opacity: .75; }
   .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
   .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
@@ -195,10 +197,10 @@
   .final h2 { font-size: clamp(2.4rem, 5.4vw, 4rem); }
   .final p { color: rgba(255,255,255,.8); max-width: 32em; margin: 16px auto 30px; }
   .final .micro { color: rgba(255,255,255,.65); }
-  .news { display: flex; gap: 8px; max-width: 440px; margin: 36px auto 0; background: rgba(255,255,255,.1); padding: 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); }
+  .news { display: flex; gap: 8px; max-width: 580px; margin: 32px auto 0; background: rgba(255,255,255,.1); padding: 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); }
   .news input { flex: 1; border: 0; background: transparent; color: #fff; padding: 0 16px; font: inherit; font-size: 16px; min-width: 0; }
   .news input::placeholder { color: rgba(255,255,255,.6); }
-  .news .pill { padding: 11px 20px; background: #fff; color: var(--green-deep); }
+  .news .pill { padding: 12px 22px; white-space: nowrap; }
 
   footer { padding: 48px 0 110px; color: var(--muted); font-size: .9rem; }
   .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
@@ -260,6 +262,8 @@
     .rabbi-photo { min-height: 360px; }
   }
   @media (max-width: 560px) {
+    .news { flex-direction: column; border-radius: 22px; padding: 8px; }
+    .news input { padding: 12px 14px; }
     .web { width: 270px; }
     .pains { grid-template-columns: 1fr; }
     .rabbi-text, .price-card { padding: 28px; }
@@ -288,7 +292,7 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-right">
-        <a href="#join" class="pill pill-cta" style="padding:10px 20px">Join now</a>
+        <a href="#signup" class="pill pill-cta" style="padding:10px 20px">Join the free email list</a>
         <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
       </div>
     </nav>
@@ -299,7 +303,7 @@
       <a href="#tips">Free tips</a>
       <a href="#webinars">Webinars</a>
       <a href="#faq">FAQ</a>
-      <a href="#join"><b>Join now →</b></a>
+      <a href="#signup"><b>Join the free email list →</b></a>
     </div>
     <div class="hero-content">
       <div>
@@ -307,8 +311,8 @@
         <h1>Every parent deserves <em>guidance.</em></h1>
         <p>Practical, Torah-based help for the real challenges of raising children today: workshops, webinars, trained parenting coaches and personal consultations.</p>
         <div class="hero-ctas">
-          <a href="#join" class="pill pill-cta pill-lg">Become a member →</a>
-          <a href="#tips" class="pill pill-ghost on-dark">Watch a free tip first</a>
+          <a href="#signup" class="pill pill-cta pill-lg">Join the free email list →</a>
+          <a href="#join" class="pill pill-ghost on-dark">Become a member</a>
         </div>
         <div class="proof">
           <div class="avatars" aria-hidden="true"><span style="background:#f2c14e">NS</span><span style="background:#e3eee6">DG</span><span style="background:#f6e4dc">RJ</span><span style="background:#e7e8f3">HR</span></div>
@@ -740,16 +744,15 @@
 </section>
 
 <!-- 12. FINAL CTA + soft fallback (daily tip) -->
-<div class="final">
-  <h2>Your home can feel <em>different.</em></h2>
-  <p>Start with Rabbi Brezak's programs today, and give your family the calm, warm home you want.</p>
-  <a href="#join" class="pill pill-cta pill-lg">Become a member →</a>
-  <p class="micro" style="margin-top:36px">Not ready yet? Get a free daily parenting tip by email.</p>
-  <form class="news" onsubmit="event.preventDefault(); location.href='mailto:admin@chinuch-lifelines.org?subject=Subscribe%20to%20daily%20tip&body='+encodeURIComponent(this.email.value);">
+<div class="final" id="signup">
+  <h2>Free parenting tips from <em>Rabbi Brezak</em></h2>
+  <p>Practical, Torah-based ideas you can use at home, straight to your inbox. It's free, just add your email.</p>
+  <form class="news" onsubmit="event.preventDefault(); location.href='mailto:admin@chinuch-lifelines.org?subject=Join%20the%20free%20email%20list&body='+encodeURIComponent(this.email.value);">
     <label class="sr" for="news-email">Email address</label>
     <input id="news-email" name="email" type="email" placeholder="Your email address" required>
-    <button class="pill">Send me tips</button>
+    <button class="pill pill-cta">Join the free email list</button>
   </form>
+  <p class="micro" style="margin-top:28px">Want the full programs? <a href="#join" style="color:#fff;font-weight:600;text-decoration:underline">Become a member →</a></p>
 </div>
 
 <footer id="contact">
@@ -765,14 +768,14 @@
 
 <!-- Sticky CTA: always one tap away -->
 <div class="sticky" id="sticky" aria-hidden="true">
-  <span>Calmer homes start here</span>
-  <a href="#join" class="pill pill-cta" tabindex="-1">Become a member</a>
+  <span>Free parenting tips</span>
+  <a href="#signup" class="pill pill-cta" tabindex="-1">Join the free email list</a>
 </div>
 <script>
   // Show the sticky CTA after the hero, hide it when the offer itself is on screen.
   const sticky = document.getElementById('sticky');
   const hero = document.querySelector('.hero');
-  const join = document.getElementById('join');
+  const join = document.getElementById('signup');
   let heroGone = false, joinVisible = false;
   const update = () => sticky.classList.toggle('show', heroGone && !joinVisible);
   new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; update(); }).observe(hero);
