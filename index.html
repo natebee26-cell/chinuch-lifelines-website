@@ -60,9 +60,9 @@
   .hero-frame { position: relative; border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; background: var(--green-deep); }
   .hero-frame > img.hero-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
   .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,35,29,.6), rgba(22,35,29,.5) 40%, rgba(22,35,29,.88)); }
-  .nav { position: relative; z-index: 3; padding: 20px 24px; display: flex; align-items: center; gap: 28px; color: #fff; }
+  .nav { position: relative; z-index: 3; padding: 14px 24px 4px; display: flex; align-items: center; gap: 28px; color: #fff; }
   .brand { flex-shrink: 0; }
-  .brand img { width: clamp(220px, 28vw, 420px); height: auto; }
+  .brand img { width: clamp(200px, 21vw, 300px); height: auto; }
   @media (max-width: 1180px) { .nav ul li:nth-child(n+4) { display: none; } }
   .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: .92rem; font-weight: 500; white-space: nowrap; }
   .nav .pill { white-space: nowrap; }
@@ -72,21 +72,21 @@
   .mobile-menu { display: none; position: absolute; z-index: 4; top: 96px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
   .mobile-menu.open { display: block; }
   .mobile-menu a { display: block; padding: 14px 16px; border-radius: 14px; font-weight: 500; }
-  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 48px; padding: 32px 56px 56px; color: #fff; }
-  .hero-content .eyebrow { font-size: .85rem; color: var(--yellow); font-weight: 600; margin-bottom: 14px; }
-  .hero-content h1 { font-size: clamp(2.6rem, 5.4vw, 4.4rem); }
-  .hero-content p { color: rgba(255,255,255,.85); font-size: 1.1rem; max-width: 32em; margin: 18px 0 28px; }
+  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 40px; padding: 10px 56px 30px; color: #fff; }
+  .hero-content .eyebrow { font-size: .82rem; color: var(--yellow); font-weight: 600; margin-bottom: 8px; }
+  .hero-content h1 { font-size: clamp(2.4rem, 4.2vw, 3.5rem); }
+  .hero-content p { color: rgba(255,255,255,.85); font-size: 1.02rem; max-width: 36em; margin: 12px 0 20px; }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .proof { display: flex; align-items: center; gap: 12px; margin-top: 26px; font-size: .88rem; color: rgba(255,255,255,.8); }
+  .proof { display: flex; align-items: center; gap: 12px; margin-top: 16px; font-size: .88rem; color: rgba(255,255,255,.8); }
   .proof .avatars { display: flex; }
   .proof .avatars span { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--green-deep); margin-left: -8px; display: grid; place-items: center; font-size: .72rem; font-weight: 700; color: var(--green-deep); }
   .proof .avatars span:first-child { margin-left: 0; }
-  .hero-cover { justify-self: center; width: min(250px, 100%); display: flex; flex-direction: column; align-items: center; gap: 18px; position: relative; }
+  .hero-cover { justify-self: center; width: min(170px, 100%); display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; }
   .hero-cover img { width: 100%; filter: drop-shadow(0 30px 30px rgba(0,0,0,.55)); transform: rotate(3deg); transition: transform .3s ease; }
   .hero-cover:hover img { transform: rotate(0) translateY(-4px); }
-  .hero-cover .sticker { position: absolute; top: -18px; left: -26px; z-index: 1; width: 92px; height: 92px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; text-align: center; font-weight: 800; font-size: .82rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; transform: rotate(-12deg); box-shadow: 0 10px 24px -8px rgba(0,0,0,.5); }
-  .hero-cover .sticker b { display: block; font-size: 1.35rem; letter-spacing: 0; }
-  .hero-cover .buy { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--green-deep); font-weight: 700; font-size: 1.02rem; padding: 13px 22px; border-radius: 999px; white-space: nowrap; box-shadow: 0 12px 24px -10px rgba(0,0,0,.5); transition: transform .15s ease; }
+  .hero-cover .sticker { position: absolute; top: -14px; left: -30px; z-index: 1; width: 76px; height: 76px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; text-align: center; font-weight: 800; font-size: .82rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; transform: rotate(-12deg); box-shadow: 0 10px 24px -8px rgba(0,0,0,.5); }
+  .hero-cover .sticker b { display: block; font-size: 1.1rem; letter-spacing: 0; }
+  .hero-cover .buy { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--green-deep); font-weight: 700; font-size: .9rem; padding: 10px 18px; border-radius: 999px; white-space: nowrap; box-shadow: 0 12px 24px -10px rgba(0,0,0,.5); transition: transform .15s ease; }
   .hero-cover:hover .buy { transform: translateX(4px); }
   .hero-cover .buy svg { transition: transform .15s ease; }
   .hero-cover:hover .buy svg { transform: translateX(3px); }
@@ -219,8 +219,11 @@
 
 
   /* Webinar library: auto-scrolling strip, pauses on hover/touch */
-  .library { background: var(--cream); overflow: hidden; padding-top: 48px; }
-  .marquee { margin-top: 40px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .library { background: var(--cream); overflow: hidden; padding-top: 14px; }
+  .lib-head { display: flex; align-items: baseline; justify-content: center; gap: 8px 18px; flex-wrap: wrap; text-align: center; }
+  .lib-head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .lib-head p { margin: 0; color: var(--muted); }
+  .marquee { margin-top: 14px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
   .marquee { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .marquee.dragging { cursor: grabbing; }
   .marquee.dragging .web { pointer-events: none; }
@@ -246,23 +249,27 @@
   }
 
 
-  /* Coming-soon one-liner */
-  .soon { padding: 40px 0 0; text-align: center; }
-  .soon-line { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.15; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
-  .soon-tag { font-family: Inter, sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--green-deep); padding: 5px 12px; border-radius: 999px; }
-  .soon-sub { margin: 6px 0 0; color: var(--muted); font-size: .92rem; }
+  /* Coming-soon course: green rounded frame */
+  .soon-pill { display: inline-flex; align-items: center; gap: 16px; background: var(--green); color: #fff; border-radius: 999px; padding: 14px 30px 14px 16px; text-align: left; box-shadow: 0 12px 26px -14px rgba(22,35,29,.6); }
+  .soon-tag { font-family: Inter, sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--green-deep); padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  .soon-text { display: flex; flex-direction: column; }
+  .soon-line { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.15; }
+  .soon-sub { color: rgba(255,255,255,.75); font-size: .85rem; margin-top: 2px; }
 
   @media (max-width: 960px) {
     .nav ul { display: none; }
     .menu-btn { display: block; }
     .nav .pill-cta { display: none; }
-    .brand img { width: 210px; }
-    .hero-content { grid-template-columns: 1fr; padding: 8px 20px 44px; gap: 28px; text-align: center; }
+    .brand img { width: 180px; }
+    .hero-content { grid-template-columns: 1fr; padding: 6px 20px 28px; gap: 18px; text-align: center; }
     .hero-content p { margin-left: auto; margin-right: auto; }
     .hero-ctas, .proof { justify-content: center; }
-    .hero-cover { width: 150px; grid-row: 1; gap: 14px; }
-    .hero-cover .sticker { width: 70px; height: 70px; font-size: .66rem; top: -10px; left: -34px; }
-    .hero-cover .sticker b { font-size: 1.05rem; }
+    .hero-cover { width: 84px; grid-row: 1; gap: 8px; }
+    .hero-cover .buy { display: none; }
+    .hero-ctas .pill-ghost { display: none; }
+    .trust li { display: block; text-align: center; }
+    .hero-cover .sticker { width: 58px; height: 58px; font-size: .56rem; top: -8px; left: -40px; }
+    .hero-cover .sticker b { font-size: .9rem; }
     .hero-cover .buy { font-size: .9rem; padding: 10px 18px; }
     .pains { grid-template-columns: 1fr 1fr; }
     .inside-grid, .rabbi-grid, .other, .foot-grid { grid-template-columns: 1fr; }
@@ -276,10 +283,12 @@
     .web { width: 270px; }
     .pains { grid-template-columns: 1fr; }
     .rabbi-text, .price-card { padding: 28px; }
-    .hero-content h1 { font-size: 2.4rem; }
+    .hero-content h1 { font-size: 2.15rem; }
+    .hero-content p { font-size: .95rem; margin: 10px auto 16px; }
     .sticky span { display: none; }
     .sticky { padding: 8px; }
-    .proof { flex-direction: column; gap: 8px; }
+    .proof { display: none; }
+    .soon-pill { border-radius: 26px; flex-direction: column; padding: 16px 20px; text-align: center; gap: 10px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
 </style>
@@ -333,21 +342,12 @@
   </div>
 </div>
 
-<!-- Coming soon: new recorded course -->
-<div class="soon">
-  <div class="wrap">
-    <p class="soon-line"><span class="soon-tag">Coming soon</span> <span>The <em>Parenting in Turbulent Times</em> course</span></p>
-    <p class="soon-sub">A new recorded course</p>
-  </div>
-</div>
-
 <!-- 11b. WEBINAR LIBRARY: past series for purchase -->
 <section id="webinars" class="library">
   <div class="wrap">
-    <div class="center">
-      <span class="tag">A World of Chinuch</span>
+    <div class="lib-head">
       <h2>The webinar <em>library</em></h2>
-      <p class="lead">15 recorded webinar series by Rabbi Brezak</p>
+      <p>15 recorded webinar series by Rabbi Brezak</p>
     </div>
     <div class="marquee" id="marquee">
     <div class="webs" id="webs">
@@ -594,7 +594,8 @@
     </div>
     </div>
     <div class="center" style="margin-top:28px">
-      <p class="micro" style="margin-top:0">Drag to browse · Questions about a purchase? <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
+      <div class="soon-pill"><span class="soon-tag">Coming soon</span><span class="soon-text"><span class="soon-line">The <em>Parenting in Turbulent Times</em> course</span><span class="soon-sub">A new recorded course</span></span></div>
+      <p class="micro" style="margin-top:18px">Drag to browse · Questions about a purchase? <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
     </div>
   </div>
 </section>
