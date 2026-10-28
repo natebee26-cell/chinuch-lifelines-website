@@ -313,6 +313,8 @@
   .ticks svg { flex-shrink: 0; margin-top: 2px; }
   .progs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; text-align: left; }
   .prog { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 32px; display: flex; flex-direction: column; }
+  .prog-img { width: calc(100% + 64px); max-width: none; margin: -32px -32px 22px; aspect-ratio: 2 / 1; height: auto; object-fit: cover; border-radius: var(--r) var(--r) 0 0; }
+  .course-img { width: 100%; aspect-ratio: 2 / 1; height: auto; object-fit: cover; border-radius: 18px; margin-bottom: 22px; }
   .prog h3 { font-size: 2rem; margin: 14px 0 12px; }
   .prog p { color: var(--muted); margin: 0 0 12px; }
   .prog p a { color: var(--green); font-weight: 600; }
@@ -325,6 +327,7 @@
     .course, .progs { grid-template-columns: 1fr; }
     .course { padding: 28px 22px; gap: 20px; }
     .prog { padding: 26px 22px; }
+    .prog-img { width: calc(100% + 44px); margin: -26px -22px 20px; }
   }
 </style>
 </head>
@@ -385,6 +388,7 @@
         <a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-cta pill-lg">Purchase the course →</a>
       </div>
       <div>
+        <img class="course-img" src="assets/programs/a-z.jpg" width="800" height="400" alt="The A–Z of Parenting Made Easy">
         <h3 style="font-size:1.6rem">Topics include</h3>
         <ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Is chinuch different today? Why and how</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Fighter Child vs. the Acceptor Child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Methods for a difficult child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivating our children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Helping victims</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Empowering parents (and helping you get unstuck!)</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Spoiling children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Shabbos table</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>And much, much more</li></ul>
       </div>
@@ -400,24 +404,28 @@
     <p class="lead" style="margin-top:14px">$47 a month for each program, with a 3-month commitment.</p>
     <div class="progs">
       <article class="prog">
+        <img class="prog-img" src="assets/programs/coaching.jpg" width="800" height="400" alt="Coaching You Through" loading="lazy">
         <div class="when"><b>Mondays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
         <h3>Coaching You <em>Through</em></h3>
         <p>An interactive workshop with personal guidance from Rabbi Brezak. The focus is on putting the tools into practice and making them work, not on new information.</p><p>For parents who have taken Rabbi Brezak's workshops and already know the techniques. (Don't have the tools yet? Learn them in the <a href="index.html#webinars">webinar library</a>.)</p><p>Starting with sibling rivalry, then chutzpah, being assertive, discipline and much more.</p>
         <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
       </article>
       <article class="prog">
+        <img class="prog-img" src="assets/programs/teens.jpg" width="800" height="400" alt="Mothers of Teenagers" loading="lazy">
         <div class="when"><b>Tuesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
         <h3>Mothers of <em>Teenagers</em></h3>
         <p>Thrive, don't just survive! In this weekly workshop you will gain the tools to:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Build a meaningful relationship with your teen based on mutual trust</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Communicate effectively so you can understand your teen</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivate your teen</li></ul>
         <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
       </article>
       <article class="prog">
+        <img class="prog-img" src="assets/programs/emunah.jpg" width="800" height="400" alt="Growing in Emunah" loading="lazy">
         <div class="when"><b>Wednesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
         <h3>Growing in <em>Emunah</em></h3>
         <p>Helping your children, and yourself, work on the one good middah that brings to all good middos: Emunah.</p>
         <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
       </article>
       <article class="prog">
+        <img class="prog-img" src="assets/programs/ask.jpg" width="800" height="400" alt="Ask Rabbi Brezak" loading="lazy">
         <div class="when"><b>Thursdays · 9:00 pm IL / 2:00 pm EST</b><span>30 min · For mothers only</span></div>
         <h3>Ask Rabbi <em>Brezak</em></h3>
         <p>Chinuch questions come up all the time. Sign up and get:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Weekly live Q&amp;A:</b> get your questions answered live by Rabbi Brezak</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>The Chinuch Helpdesk:</b> send up to 2 questions a month and get an answer by email within 3 business days</span></li></ul>
