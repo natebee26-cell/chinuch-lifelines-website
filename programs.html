@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — Chinuch LifeLines</title>
+<meta name="description" content="Ongoing parenting programs with Rabbi Dov Brezak on Zoom: weekly workshops for mothers and the A–Z of Parenting Made Easy course.">
+<meta name="theme-color" content="#16231d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fbf8f1;
+    --sand: #f3efe4;
+    --ink: #1f2a24;
+    --muted: #5e6a63;
+    --green: #1e5a43;
+    --green-deep: #16231d;
+    --yellow: #f2c14e;
+    --mint: #e3eee6;
+    --peach: #f6e4dc;
+    --butter: #f7ecd0;
+    --lav: #e7e8f3;
+    --line: #e6e1d4;
+    --r: 28px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; -webkit-tap-highlight-color: transparent; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+  .narrow { max-width: 760px; }
+  h1, h2, h3 { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-weight: 400; line-height: 1.05; letter-spacing: -.01em; }
+  h2 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); }
+  em { font-style: italic; }
+  section { padding: 80px 0; scroll-margin-top: 16px; }
+  .center { text-align: center; }
+  .lead { color: var(--muted); font-size: 1.08rem; max-width: 36em; }
+  .center .lead { margin-left: auto; margin-right: auto; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  .pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: .95rem; border: 0; cursor: pointer; font-family: inherit; transition: transform .15s ease, background .15s ease, box-shadow .15s ease; }
+  .pill:active { transform: scale(.97); }
+  .pill-cta { background: var(--yellow); color: var(--green-deep); box-shadow: 0 10px 24px -10px rgba(242,193,78,.8); }
+  .pill-cta:hover { background: #f5cb66; }
+  .pill-dark { background: var(--green); color: #fff; }
+  .pill-dark:hover { background: #24694f; }
+  .pill-ghost { border: 1px solid var(--line); background: transparent; color: var(--ink); }
+  .pill-ghost.on-dark { color: #fff; border-color: rgba(255,255,255,.35); }
+  .pill-lg { padding: 17px 32px; font-size: 1.02rem; }
+  .tag { display: inline-block; font-size: .78rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: #fff; margin-bottom: 16px; }
+  .tag.on-dark { background: transparent; color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.25); }
+  .stars { color: var(--yellow); letter-spacing: 2px; }
+  .micro { font-size: .82rem; color: var(--muted); margin-top: 12px; }
+
+  /* Header + hero */
+  .hero { padding: 12px; }
+  .hero-frame { position: relative; border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; background: var(--green-deep); }
+  .hero-frame > img.hero-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
+  .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,35,29,.6), rgba(22,35,29,.5) 40%, rgba(22,35,29,.88)); }
+  .nav { position: relative; z-index: 3; padding: 14px 24px 4px; display: flex; align-items: flex-start; gap: 28px; color: #fff; }
+  .brand { flex-shrink: 0; }
+  .brand img { width: clamp(280px, 33vw, 520px); height: auto; }
+  .nav ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 8px 0 0; font-size: .95rem; font-weight: 500; white-space: nowrap; }
+  .nav .pill { white-space: nowrap; }
+  .nav ul a:hover { opacity: .75; }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+  .mobile-menu { display: none; position: absolute; z-index: 4; top: 96px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
+  .mobile-menu.open { display: block; }
+  .mobile-menu a { display: block; padding: 14px 16px; border-radius: 14px; font-weight: 500; }
+  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 310px; align-items: center; gap: 40px; padding: 10px 56px 18px; color: #fff; }
+  .hero-content .eyebrow { font-size: .82rem; color: var(--yellow); font-weight: 600; margin-bottom: 8px; }
+  .hero-content h1 { font-size: clamp(2.4rem, 4.2vw, 3.5rem); }
+  .hero-content p { color: rgba(255,255,255,.85); font-size: 1.02rem; max-width: 50em; margin: 26px 0 22px; }
+  .hero-ctas { display: flex; gap: 14px 22px; flex-wrap: wrap; align-items: center; }
+  .proof { display: flex; align-items: center; gap: 12px; margin-top: 0; font-size: .88rem; color: rgba(255,255,255,.8); }
+  .proof .avatars { display: flex; }
+  .proof .avatars span { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--green-deep); margin-left: -8px; display: grid; place-items: center; font-size: .72rem; font-weight: 700; color: var(--green-deep); }
+  .proof .avatars span:first-child { margin-left: 0; }
+  .hero-cover { justify-self: center; width: min(245px, 100%); margin-top: -72px; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; }
+  .hero-cover img { width: 100%; filter: drop-shadow(0 30px 30px rgba(0,0,0,.55)); transform: rotate(3deg); transition: transform .3s ease; }
+  .hero-cover:hover img { transform: rotate(0) translateY(-4px); }
+  .hero-cover .sticker { position: absolute; top: -14px; left: -30px; z-index: 1; width: 76px; height: 76px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; text-align: center; font-weight: 800; font-size: .82rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; transform: rotate(-12deg); box-shadow: 0 10px 24px -8px rgba(0,0,0,.5); }
+  .hero-cover .sticker b { display: block; font-size: 1.1rem; letter-spacing: 0; }
+  .hero-cover .buy { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--green-deep); font-weight: 700; font-size: .9rem; padding: 10px 18px; border-radius: 999px; white-space: nowrap; box-shadow: 0 12px 24px -10px rgba(0,0,0,.5); transition: transform .15s ease; }
+  .hero-cover:hover .buy { transform: translateX(4px); }
+  .hero-cover .buy svg { transition: transform .15s ease; }
+  .hero-cover:hover .buy svg { transform: translateX(3px); }
+
+  /* Trust strip */
+  .trust { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .trust ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 14px 40px; flex-wrap: wrap; color: var(--muted); font-size: .92rem; }
+  .trust li { display: flex; align-items: center; gap: 8px; }
+  .trust b { color: var(--ink); font-weight: 600; }
+
+  /* Pain points */
+  .pains { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
+  .pain { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
+  .pain .q { font-family: "Instrument Serif", serif; font-size: 1.45rem; line-height: 1.15; }
+  .pain p { color: var(--muted); font-size: .9rem; margin: 10px 0 0; }
+  .bridge { margin-top: 40px; font-family: "Instrument Serif", serif; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+
+  /* Inside membership */
+  .inside { background: var(--sand); }
+  .inside-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: start; }
+  .benefits { display: grid; gap: 12px; }
+  .benefit { display: flex; gap: 16px; align-items: flex-start; background: #fff; border-radius: 20px; padding: 20px; }
+  .benefit .ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; }
+  .benefit:nth-child(1) .ico { background: var(--mint); }
+  .benefit:nth-child(2) .ico { background: var(--butter); }
+  .benefit:nth-child(3) .ico { background: var(--lav); }
+  .benefit:nth-child(4) .ico { background: var(--peach); }
+  .benefit:nth-child(5) .ico { background: var(--mint); }
+  .benefit h3 { font-family: Inter, sans-serif; font-weight: 600; font-size: 1.02rem; }
+  .benefit p { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+  .inline-quote { margin-top: 28px; background: var(--green-deep); color: #fff; border-radius: 22px; padding: 26px; }
+  .inline-quote p { font-family: "Instrument Serif", serif; font-size: 1.5rem; line-height: 1.2; margin: 10px 0 12px; }
+  .inline-quote small { color: rgba(255,255,255,.7); }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 40px 0 36px; counter-reset: s; }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px; text-align: left; }
+  .step .n { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 16px; }
+  .step h3 { font-size: 1.7rem; }
+  .step p { color: var(--muted); margin: 8px 0 0; font-size: .92rem; }
+
+  /* Rabbi */
+  .rabbi-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 14px; }
+  .rabbi-photo { border-radius: 22px; overflow: hidden; min-height: 480px; }
+  .rabbi-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .rabbi-text { background: var(--mint); border-radius: 22px; padding: 44px; display: flex; flex-direction: column; justify-content: center; }
+  .rabbi-text h2 { margin-bottom: 16px; }
+  .rabbi-text p { color: #3d4b44; margin: 0 0 14px; }
+  .creds { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 22px; }
+  .creds span { background: #fff; border-radius: 999px; padding: 7px 14px; font-size: .82rem; font-weight: 500; }
+  .book-mini { display: flex; gap: 16px; align-items: center; background: #fff; border-radius: 18px; padding: 14px; }
+  .book-mini img { width: 64px; border-radius: 6px; }
+  .book-mini b { display: block; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.2rem; }
+  .book-mini a { font-size: .85rem; font-weight: 600; color: var(--green); }
+
+  /* Free tips */
+  .videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
+  .video .frame { aspect-ratio: 16/10; border-radius: 22px; background: #0d1512 url("assets/pme-title.webp") center / cover no-repeat; display: grid; place-items: center; position: relative; overflow: hidden; }
+  .video .frame::after { content: ""; position: absolute; inset: 0; background: rgba(13,21,18,.15); transition: background .2s ease; }
+  .video:hover .frame::after { background: rgba(13,21,18,0); }
+  .video .play { position: relative; z-index: 1; }
+  .video .tipno { position: absolute; z-index: 1; top: 12px; left: 12px; background: var(--yellow); color: var(--green-deep); font-size: .74rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .video h3 { font-weight: 600; }
+  .video .play { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.85); align-self: end; justify-self: end; margin: 14px; display: grid; place-items: center; transition: transform .15s ease; }
+  .video:hover .play { transform: scale(1.08); }
+  .video h3 { font-family: Inter, sans-serif; font-weight: 500; font-size: .95rem; margin-top: 10px; }
+
+  /* Reviews wall */
+  .reviews { background: var(--green-deep); color: #fff; }
+  .reviews .lead { color: rgba(255,255,255,.7); }
+  .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .9rem; color: rgba(255,255,255,.8); }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+  .quote { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; text-align: left; }
+  .quote p { font-family: "Instrument Serif", serif; font-size: 1.45rem; line-height: 1.2; margin: 12px 0 auto; }
+  .who { display: flex; align-items: center; gap: 10px; margin-top: 22px; font-size: .88rem; color: rgba(255,255,255,.75); }
+  .who span { width: 36px; height: 36px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; font-weight: 700; font-size: .78rem; }
+
+  /* Pricing */
+  .price-card { max-width: 560px; margin: 40px auto 0; background: #fff; border: 2px solid var(--green); border-radius: var(--r); padding: 40px; text-align: left; position: relative; box-shadow: 0 30px 60px -36px rgba(22,35,29,.5); }
+  .price-card .badge { position: absolute; top: -14px; left: 40px; background: var(--yellow); color: var(--green-deep); font-weight: 700; font-size: .78rem; padding: 6px 14px; border-radius: 999px; }
+  .price-card h3 { font-size: 2.2rem; }
+  .price { font-family: "Instrument Serif", serif; font-size: 3.4rem; margin: 10px 0 4px; }
+  .price small { font-family: Inter, sans-serif; font-size: 1rem; color: var(--muted); }
+  .checks { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 12px; }
+  .checks li { display: flex; gap: 12px; align-items: flex-start; }
+  .checks svg { flex-shrink: 0; margin-top: 3px; }
+  .price-card .pill { width: 100%; }
+
+  /* FAQ */
+  .faq { display: grid; gap: 10px; margin-top: 36px; text-align: left; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 0 22px; }
+  summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--green); transition: transform .2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: 0 0 20px; color: var(--muted); }
+
+  /* Other help */
+  .other { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+  .other a { border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 6px; transition: transform .2s ease; }
+  .other a:hover { transform: translateY(-3px); }
+  .other a:nth-child(1) { background: var(--peach); }
+  .other a:nth-child(2) { background: var(--lav); }
+  .other h3 { font-size: 1.8rem; }
+  .other p { margin: 0; color: var(--muted); }
+  .other .go { font-weight: 600; color: var(--green); margin-top: 8px; }
+
+  /* Final CTA */
+  .final { margin: 0 12px; border-radius: var(--r); background: var(--green); color: #fff; text-align: center; padding: 88px 20px; }
+  .final h2 { font-size: clamp(2.4rem, 5.4vw, 4rem); }
+  .final p { color: rgba(255,255,255,.8); max-width: 32em; margin: 16px auto 30px; }
+  .final .micro { color: rgba(255,255,255,.65); }
+  .news { display: flex; gap: 8px; max-width: 580px; margin: 32px auto 0; background: rgba(255,255,255,.1); padding: 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); }
+  .news input { flex: 1; border: 0; background: transparent; color: #fff; padding: 0 16px; font: inherit; font-size: 16px; min-width: 0; }
+  .news input::placeholder { color: rgba(255,255,255,.6); }
+  .news .pill { padding: 12px 22px; white-space: nowrap; }
+
+  footer { padding: 48px 0 110px; color: var(--muted); font-size: .9rem; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+  footer h4 { color: var(--ink); margin: 0 0 12px; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.4rem; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  footer a:hover { color: var(--green); }
+  .copy { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 18px; font-size: .82rem; }
+
+  /* Sticky CTA bar (appears after scrolling past hero) */
+  .sticky { position: fixed; left: 50%; bottom: 16px; transform: translate(-50%, 140%); z-index: 20; display: flex; align-items: center; gap: 16px; background: var(--green-deep); color: #fff; padding: 10px 10px 10px 22px; border-radius: 999px; box-shadow: 0 20px 40px -12px rgba(0,0,0,.45); transition: transform .35s cubic-bezier(.2,.8,.2,1); width: max-content; max-width: calc(100% - 24px); }
+  .sticky.show { transform: translate(-50%, 0); }
+  .sticky span { font-size: .9rem; }
+  .sticky .pill { padding: 11px 20px; }
+
+
+  /* Webinar library: auto-scrolling strip, pauses on hover/touch */
+  .library { background: var(--cream); overflow: hidden; padding-top: 14px; padding-bottom: 36px; }
+  .lib-head { display: flex; align-items: baseline; justify-content: center; gap: 8px 18px; flex-wrap: wrap; text-align: center; }
+  .lib-head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .lib-head p { margin: 0; color: var(--muted); }
+  .marquee { margin-top: 14px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .marquee { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .marquee.dragging { cursor: grabbing; }
+  .marquee.dragging .web { pointer-events: none; }
+  .webs { display: flex; gap: 14px; width: max-content; padding: 6px 0 10px; will-change: transform; }
+  .wimg { -webkit-user-drag: none; }
+  .web { width: 310px; flex-shrink: 0; background: #fff; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px; border-top: 5px solid var(--mint); align-self: flex-start; transition: transform .2s ease, box-shadow .2s ease; }
+  .web:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -20px rgba(22,35,29,.4); }
+  .web:nth-child(3n+2) { border-top-color: var(--butter); }
+  .web:nth-child(3n+3) { border-top-color: var(--lav); }
+  .wtop { display: flex; justify-content: space-between; align-items: center; }
+  .wnum { font-family: "Instrument Serif", serif; font-size: 1.3rem; color: var(--muted); }
+  .wimg { width: 100%; height: 210px; object-fit: contain; margin: -4px 0 4px; transition: transform .25s ease; }
+  .web:hover .wimg { transform: scale(1.04) rotate(-1deg); }
+  .web h3 { font-size: 1.65rem; min-height: 2.1em; }
+  .wmeta { font-size: .82rem; color: var(--muted); }
+  .web details { border: 0; background: var(--cream); border-radius: 14px; padding: 0 14px; }
+  .web summary { padding: 12px 0; font-size: .88rem; }
+  .web ol { margin: 0 0 14px; padding-left: 20px; color: var(--muted); font-size: .86rem; display: grid; gap: 4px; }
+  .web .pill { align-self: flex-start; margin-top: 8px; }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { overflow-x: auto; }
+    .webs .web[aria-hidden] { display: none; }
+  }
+
+
+  /* Coming-soon course: full-width green band */
+  .soon-band { background: var(--green); color: #fff; padding: 36px 0; }
+  .soon-pill { display: flex; justify-content: center; align-items: center; gap: 28px; text-align: left; }
+  .soon-tag { font-family: Inter, sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--green-deep); padding: 12px 24px; border-radius: 999px; white-space: nowrap; }
+  .soon-text { display: flex; flex-direction: column; }
+  .soon-line { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.15; white-space: nowrap; }
+  .soon-sub { color: rgba(255,255,255,.75); font-size: 1.05rem; margin-top: 6px; align-self: flex-end; }
+
+  @media (max-width: 960px) {
+    .nav ul { display: none; }
+    .menu-btn { display: block; }
+    .nav .pill-cta { display: none; }
+    .brand img { width: 230px; }
+    .hero-content { grid-template-columns: 1fr; padding: 6px 20px 28px; gap: 18px; text-align: center; }
+    .hero-content p { margin-left: auto; margin-right: auto; }
+    .hero-ctas, .proof { justify-content: center; }
+    .hero-cover { width: 105px; margin-top: 0; grid-row: 1; gap: 8px; }
+    .hero-cover .buy { display: none; }
+    .hero-ctas .pill-ghost { display: none; }
+    .trust li { display: block; text-align: center; }
+    .hero-cover .sticker { width: 58px; height: 58px; font-size: .56rem; top: -8px; left: -40px; }
+    .hero-cover .sticker b { font-size: .9rem; }
+    .hero-cover .buy { font-size: .9rem; padding: 10px 18px; }
+    .pains { grid-template-columns: 1fr 1fr; }
+    .inside-grid, .rabbi-grid, .other, .foot-grid { grid-template-columns: 1fr; }
+    .steps, .videos, .quotes { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .rabbi-photo { min-height: 360px; }
+  }
+  @media (max-width: 560px) {
+    .news { flex-direction: column; border-radius: 22px; padding: 8px; }
+    .news input { padding: 12px 14px; }
+    .web { width: 270px; }
+    .pains { grid-template-columns: 1fr; }
+    .rabbi-text, .price-card { padding: 28px; }
+    .hero-content h1 { font-size: 2.15rem; }
+    .hero-content p { font-size: .95rem; margin: 10px auto 16px; }
+    .sticky span { display: none; }
+    .sticky { padding: 8px; }
+    .proof { display: none; }
+    .soon-pill { flex-direction: column; text-align: center; gap: 12px; }
+    .soon-line { white-space: normal; }
+    .soon-sub { align-self: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+
+  /* Programs page */
+  .top { padding: 12px; }
+  .top-frame { position: relative; border-radius: var(--r); background: var(--green-deep); }
+  .top .brand img { width: clamp(220px, 24vw, 340px); }
+  .top .mobile-menu { top: 84px; }
+  .nav ul a[aria-current] { color: var(--yellow); }
+  .page-head { padding: 30px 56px 46px; color: #fff; }
+  .page-head h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); }
+  .page-head p { color: rgba(255,255,255,.85); max-width: 46em; margin: 16px 0 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding: 0; list-style: none; }
+  .facts li { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 8px 16px; font-size: .9rem; }
+  .facts b { color: var(--yellow); }
+  .course { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 44px; }
+  .course .price { font-family: "Instrument Serif", serif; font-size: 2.6rem; color: var(--green); margin: 18px 0 20px; }
+  .ticks { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+  .ticks li { display: flex; gap: 10px; align-items: flex-start; }
+  .ticks svg { flex-shrink: 0; margin-top: 2px; }
+  .progs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; text-align: left; }
+  .prog { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 32px; display: flex; flex-direction: column; }
+  .prog h3 { font-size: 2rem; margin: 14px 0 12px; }
+  .prog p { color: var(--muted); margin: 0 0 12px; }
+  .prog p a { color: var(--green); font-weight: 600; }
+  .prog .pill { align-self: flex-start; margin-top: auto; }
+  .prog .ticks { margin: 0 0 22px; }
+  .when { display: flex; flex-direction: column; gap: 2px; background: var(--mint); border-radius: 16px; padding: 12px 16px; font-size: .92rem; }
+  .when span { color: var(--muted); font-size: .85rem; }
+  @media (max-width: 960px) {
+    .page-head { padding: 16px 20px 32px; }
+    .course, .progs { grid-template-columns: 1fr; }
+    .course { padding: 28px 22px; gap: 20px; }
+    .prog { padding: 26px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-frame">
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="brand"><img src="assets/logo.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
+      <ul>
+        <li><a href="index.html#webinars">Webinars</a></li>
+        <li><a href="programs.html" aria-current="page">Programs</a></li>
+        <li><a href="index.html#tips">Free tips</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#rabbi">Rabbi Brezak</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
+      </div>
+    </nav>
+    <div class="mobile-menu" onclick="this.classList.remove('open')">
+      <a href="index.html#webinars">Webinars</a>
+      <a href="programs.html">Programs</a>
+      <a href="index.html#tips">Free tips</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#rabbi">Rabbi Brezak</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#signup"><b>Join the free email list</b></a>
+    </div>
+    <div class="page-head">
+      <span class="tag on-dark">Ongoing programs</span>
+      <h1>Programs with <em>Rabbi Brezak</em></h1>
+      <p>Weekly workshops on Zoom. Join live on Zoom, call in by phone, or listen to the recording afterward.</p>
+      <ul class="facts">
+        <li><b>$47</b> a month per program</li>
+        <li>Live on Zoom</li>
+        <li>By phone or recording</li>
+        <li>3-month commitment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Pre-recorded course -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="course">
+      <div>
+        <span class="tag">Pre-recorded course</span>
+        <h2>The A–Z of Parenting <em>Made Easy</em></h2>
+        <p class="lead" style="margin-top:16px">A comprehensive chinuch course covering all the essentials of parenting today: 41 recorded classes and 8 pathways to effective parenting.</p>
+        <div class="price">$147</div>
+        <a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-cta pill-lg">Purchase the course →</a>
+      </div>
+      <div>
+        <h3 style="font-size:1.6rem">Topics include</h3>
+        <ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Is chinuch different today? Why and how</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Fighter Child vs. the Acceptor Child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Methods for a difficult child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivating our children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Helping victims</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Empowering parents (and helping you get unstuck!)</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Spoiling children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Shabbos table</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>And much, much more</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Weekly workshops -->
+<section>
+  <div class="wrap center">
+    <span class="tag">Live on Zoom</span>
+    <h2>Weekly <em>workshops</em></h2>
+    <p class="lead" style="margin-top:14px">$47 a month for each program, with a 3-month commitment.</p>
+    <div class="progs">
+      <article class="prog">
+        <div class="when"><b>Mondays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Coaching You <em>Through</em></h3>
+        <p>An interactive workshop with personal guidance from Rabbi Brezak. The focus is on putting the tools into practice and making them work, not on new information.</p><p>For parents who have taken Rabbi Brezak's workshops and already know the techniques. (Don't have the tools yet? Learn them in the <a href="index.html#webinars">webinar library</a>.)</p><p>Starting with sibling rivalry, then chutzpah, being assertive, discipline and much more.</p>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <div class="when"><b>Tuesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Mothers of <em>Teenagers</em></h3>
+        <p>Thrive, don't just survive! In this weekly workshop you will gain the tools to:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Build a meaningful relationship with your teen based on mutual trust</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Communicate effectively so you can understand your teen</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivate your teen</li></ul>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <div class="when"><b>Wednesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Growing in <em>Emunah</em></h3>
+        <p>Helping your children, and yourself, work on the one good middah that brings to all good middos: Emunah.</p>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <div class="when"><b>Thursdays · 9:00 pm IL / 2:00 pm EST</b><span>30 min · For mothers only</span></div>
+        <h3>Ask Rabbi <em>Brezak</em></h3>
+        <p>Chinuch questions come up all the time. Sign up and get:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Weekly live Q&amp;A:</b> get your questions answered live by Rabbi Brezak</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>The Chinuch Helpdesk:</b> send up to 2 questions a month and get an answer by email within 3 business days</span></li></ul>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap narrow center">
+    <span class="tag">Questions</span>
+    <h2>Good to <em>know</em></h2>
+    <div class="faq">
+      <details><summary>The timing doesn't work for me. Can I get recordings?</summary><p>Yes! All classes are recorded, and you can sign up to receive the mp3 by email after each class.</p></details>
+      <details><summary>Can I listen on the phone?</summary><p>Yes. All classes are stored on our phone line system, which you can call into anytime.</p></details>
+      <details><summary>How does payment work?</summary><p>Each workshop costs $47 a month. You are charged on the date you sign up, and the charge recurs monthly unless it is cancelled.</p></details>
+      <details><summary>Can I cancel anytime?</summary><p>There is a 3-month commitment from when you sign up. After that, you may cancel at any time.</p></details>
+    </div>
+    <p class="micro" style="margin-top:22px">Can't find an answer? Email <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><h4>Chinuch LifeLines</h4><p style="margin:0">Empowering Parents · Building Children<br>Under the auspices of Rabbi Dov Brezak<br>1174 E 23rd St, Brooklyn, NY 11210</p></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+17324409437">+1 732-440-9437</a></li><li><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li><li>Office hours 9:00 am – 5:00 pm</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="programs.html">Programs</a></li><li><a href="index.html#webinars">Webinar library</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://www.torahanytime.com" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
+    </div>
+    <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
