@@ -222,7 +222,7 @@
   .lib-head { display: flex; align-items: baseline; justify-content: center; gap: 8px 18px; flex-wrap: wrap; text-align: center; }
   .lib-head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
   .lib-head p { margin: 0; color: var(--muted); }
-  .marquee { margin-top: 14px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .marquee { margin: 14px calc(50% - 50vw) 0; overflow: hidden; } /* full-bleed: edge to edge of the page */
   .marquee { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .marquee.dragging { cursor: grabbing; }
   .marquee.dragging .web { pointer-events: none; }
