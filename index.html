@@ -252,6 +252,14 @@
   .soon-band { background: var(--green); color: #fff; padding: 36px 0; }
   .soon-pill { display: flex; justify-content: center; align-items: center; gap: 28px; text-align: left; }
   .soon-tag { font-family: Inter, sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--green-deep); padding: 12px 24px; border-radius: 999px; white-space: nowrap; }
+  /* "Coming soon!" comes alive: glowing pulse ring, a shine sweep and a blinking dot */
+  .soon-tag { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; animation: soon-pulse 1.8s ease-out infinite; }
+  .soon-tag::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #d64545; flex-shrink: 0; animation: soon-blink 1s steps(1) infinite; }
+  .soon-tag::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.75), transparent); transform: skewX(-20deg); animation: soon-shine 2.6s ease-in-out infinite; }
+  @keyframes soon-pulse { 0% { box-shadow: 0 0 0 0 rgba(242,193,78,.75); } 70% { box-shadow: 0 0 0 18px rgba(242,193,78,0); } 100% { box-shadow: 0 0 0 0 rgba(242,193,78,0); } }
+  @keyframes soon-blink { 50% { opacity: .15; } }
+  @keyframes soon-shine { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+  @media (prefers-reduced-motion: reduce) { .soon-tag, .soon-tag::before, .soon-tag::after { animation: none; } }
   .soon-text { display: flex; flex-direction: column; }
   .soon-line { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.15; white-space: nowrap; }
   .soon-sub { color: rgba(255,255,255,.75); font-size: 1.05rem; margin-top: 6px; align-self: flex-end; }
