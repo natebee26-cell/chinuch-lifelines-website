@@ -86,7 +86,6 @@
   .hero-cover img { animation: book-sway 4s ease-in-out infinite; transform-origin: 50% 90%; }
   .hero-cover:hover img { animation-play-state: paused; }
   @keyframes book-sway { 0%, 100% { transform: rotate(4deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(-6px); } }
-  @media (prefers-reduced-motion: reduce) { .hero-cover img { animation: none; } }
   .hero-cover .sticker { position: absolute; top: -14px; left: -30px; z-index: 1; width: 76px; height: 76px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; text-align: center; font-weight: 800; font-size: .82rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .04em; transform: rotate(-12deg); box-shadow: 0 10px 24px -8px rgba(0,0,0,.5); }
   .hero-cover .sticker b { display: block; font-size: 1.1rem; letter-spacing: 0; }
   /* "New! Out now" sticker: pops and wiggles, with a ripple ring */
@@ -94,7 +93,6 @@
   .hero-cover .sticker::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--yellow); animation: sticker-ripple 2.4s ease-out infinite; pointer-events: none; }
   @keyframes sticker-wiggle { 0%, 60%, 100% { transform: rotate(-12deg) scale(1); } 68% { transform: rotate(-4deg) scale(1.12); } 76% { transform: rotate(-18deg) scale(1.08); } 84% { transform: rotate(-8deg) scale(1.04); } 92% { transform: rotate(-14deg) scale(1); } }
   @keyframes sticker-ripple { 0%, 60% { transform: scale(1); opacity: 0; } 64% { opacity: .9; } 100% { transform: scale(1.55); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .hero-cover .sticker, .hero-cover .sticker::after { animation: none; } }
   .hero-cover .buy { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--green-deep); font-weight: 700; font-size: .9rem; padding: 10px 18px; border-radius: 999px; white-space: nowrap; box-shadow: 0 12px 24px -10px rgba(0,0,0,.5); transition: transform .15s ease; }
   .hero-cover:hover .buy { transform: translateX(4px); }
   .hero-cover .buy svg { transition: transform .15s ease; }
@@ -252,10 +250,6 @@
   .web summary { padding: 12px 0; font-size: .88rem; }
   .web ol { margin: 0 0 14px; padding-left: 20px; color: var(--muted); font-size: .86rem; display: grid; gap: 4px; }
   .web .pill { align-self: flex-start; margin-top: 8px; }
-  @media (prefers-reduced-motion: reduce) {
-    .marquee { overflow-x: auto; }
-    .webs .web[aria-hidden] { display: none; }
-  }
 
 
   /* Coming-soon course: full-width green band */
@@ -269,7 +263,6 @@
   @keyframes soon-pulse { 0% { box-shadow: 0 0 0 0 rgba(242,193,78,.75); } 70% { box-shadow: 0 0 0 18px rgba(242,193,78,0); } 100% { box-shadow: 0 0 0 0 rgba(242,193,78,0); } }
   @keyframes soon-blink { 50% { opacity: .15; } }
   @keyframes soon-shine { 0%, 55% { left: -60%; } 100% { left: 130%; } }
-  @media (prefers-reduced-motion: reduce) { .soon-tag, .soon-tag::before, .soon-tag::after { animation: none; } }
   .soon-text { display: flex; flex-direction: column; }
   .soon-line { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.15; white-space: nowrap; }
   .soon-sub { color: rgba(255,255,255,.75); font-size: 1.05rem; margin-top: 6px; align-self: flex-end; }
@@ -755,8 +748,7 @@
     const box = document.getElementById('marquee');
     const track = document.getElementById('webs');
     if (!box || !track) return;
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const speed = reduce ? 0 : 45; // px per second
+    const speed = 45; // px per second (runs on every device, as the site owner asked)
     const cards = track.children;
     let period = 0, x = 0, last = performance.now();
     let hovering = false, dragging = false, startX = 0, startPos = 0, moved = 0;
