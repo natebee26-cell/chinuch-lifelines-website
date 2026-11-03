@@ -66,6 +66,9 @@
   .nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 22px; list-style: none; margin: 0 0 0 auto; padding: 8px 0 0; font-size: .95rem; font-weight: 500; white-space: nowrap; }
   .nav .pill { white-space: nowrap; }
   .nav ul a:hover { opacity: .75; }
+  @media (max-width: 1320px) { .nav ul { gap: 8px 14px; font-size: .88rem; } } /* 7 tabs stay on one line next to the big logo */
+  @media (max-width: 1160px) { .nav ul { gap: 8px 10px; font-size: .82rem; } }
+  @media (min-width: 961px) and (max-width: 1064px) { .brand img { width: 240px; } }
   .nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
   .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
   .mobile-menu { display: none; position: absolute; z-index: 4; top: 96px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
@@ -154,10 +157,13 @@
 
   /* Free tips */
   .videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
-  .member-bar { margin: 30px auto 0; max-width: 760px; background: var(--green); color: #fff; border-radius: 999px; padding: 12px 12px 12px 30px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; }
-  .member-bar b { color: var(--yellow); font-weight: 600; }
+  .member-band { background: var(--green); color: #fff; padding: 36px 0; }
+  .member-row { display: flex; justify-content: center; align-items: center; gap: 28px; }
+  .member-text { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.2; }
+  .member-text em { color: var(--yellow); }
+  .member-row .pill { white-space: nowrap; }
   .blink { animation: soon-pulse 1.8s ease-out infinite; }
-  @media (max-width: 640px) { .member-bar { flex-direction: column; border-radius: 22px; padding: 20px; text-align: center; } }
+  @media (max-width: 760px) { .member-row { flex-direction: column; text-align: center; gap: 16px; } }
   .videos.one { grid-template-columns: minmax(0, 560px); justify-content: center; }
   .video .frame { aspect-ratio: 16/10; border-radius: 22px; background: #0d1512 url("assets/pme-title.webp") center / cover no-repeat; display: grid; place-items: center; position: relative; overflow: hidden; }
   .video .frame::after { content: ""; position: absolute; inset: 0; background: rgba(13,21,18,.15); transition: background .2s ease; }
@@ -342,6 +348,7 @@
         <li><a href="#webinars">Webinars</a></li>
         <li><a href="programs.html">Books &amp; Programs</a></li>
         <li><a href="#tips">Free tips</a></li>
+        <li><a href="mentor-training.html">Mentor Training</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#rabbi">Rabbi Brezak</a></li>
         <li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li>
@@ -354,6 +361,7 @@
       <a href="#webinars">Webinars</a>
       <a href="programs.html">Books &amp; Programs</a>
       <a href="#tips">Free tips</a>
+      <a href="mentor-training.html">Mentor Training</a>
       <a href="#reviews">Reviews</a>
       <a href="#rabbi">Rabbi Brezak</a>
       <a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a>
@@ -642,7 +650,7 @@
 </div>
 
 <!-- 7. FREE VALUE: let them taste it -->
-<section id="tips" style="padding-top:44px">
+<section id="tips" style="padding-top:44px; padding-bottom:56px">
   <div class="wrap center">
     <span class="tag">Free sample tip</span>
     <h2>Parenting Made <em>Easier!</em></h2>
@@ -650,12 +658,18 @@
     <div class="videos one">
       <a href="https://vimeo.com/1240041060" target="_blank" rel="noopener" class="video"><div class="frame"><span class="tipno">Tip #1</span><span class="play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#1e5a43"/></svg></span></div><h3>Where Are You Going?</h3></a>
     </div>
-    <div class="member-bar">
-      <span>Want a new tip every week? <b>Sign up for our free membership.</b></span>
-      <a href="membership.html?plan=Basic#join" class="pill pill-cta blink">Sign up free!</a>
-    </div>
   </div>
 </section>
+
+<!-- Free membership sign-up: full-width green band under the free tip -->
+<div class="member-band">
+  <div class="wrap">
+    <div class="member-row">
+      <span class="member-text">Want a new tip every week? <em>Sign up for our free membership!</em></span>
+      <a href="membership.html?plan=Basic#join" class="pill pill-cta pill-lg blink">Sign up free!</a>
+    </div>
+  </div>
+</div>
 
 <!-- 8. REVIEWS WALL: social proof right before the price -->
 <section class="reviews" id="reviews">
@@ -685,7 +699,7 @@
         <li>Author of the bestseller <b>Chinuch in Turbulent Times</b>, and the newly released <b>Parenting in Turbulent Times</b></li>
         <li><b>Director of Chinuch LifeLines</b>, empowering parents &amp; building children across the world</li>
         <li><b>30+ years</b> as educator, principal and parenting guide</li>
-        <li>Provides <b>Parent Mentor training</b> for men &amp; women</li>
+        <li>Provides <a href="mentor-training.html" style="text-decoration:underline"><b>Parent Mentor training</b></a> for men &amp; women</li>
         <li><b>110,964+ listeners</b> on TorahAnytime</li>
       </ul>
       <p>A leading voice in Jewish education, with decades of experience as a parent, principal, author, lecturer and consultant. He founded Chinuch LifeLines so parents everywhere can get practical, encouraging guidance rooted in Torah values and love for every child.</p>
