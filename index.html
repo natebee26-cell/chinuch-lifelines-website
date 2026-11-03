@@ -267,7 +267,7 @@
 
 
   /* Coming-soon course: full-width green band */
-  .soon-band { background: radial-gradient(ellipse 60% 120% at 50% 50%, rgba(31,181,191,.14), transparent 70%), #0c1214; color: #fff; padding: 46px 0; } /* same dark shade as the Parenting Made Easier videos */
+  .soon-band { background: var(--green); color: #fff; padding: 36px 0; }
   .soon-pill { display: flex; justify-content: center; align-items: center; gap: 28px; text-align: left; }
   .soon-tag { font-family: Inter, sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: var(--yellow); color: var(--green-deep); padding: 12px 24px; border-radius: 999px; white-space: nowrap; }
   /* "Coming soon!" comes alive: glowing pulse ring, a shine sweep and a blinking dot */
@@ -280,10 +280,6 @@
   .soon-text { display: flex; flex-direction: column; }
   .soon-line { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.15; white-space: nowrap; }
   .soon-sub { color: rgba(255,255,255,.75); font-size: .9rem; margin-top: 2px; align-self: center; }
-  .soon-logo-wrap { position: relative; display: inline-block; height: 120px; }
-  .soon-logo { height: 100%; width: auto; display: block; }
-  /* gold "!" right after "Easier" in the logo */
-  .soon-bang { position: absolute; left: 83%; bottom: 3%; font-family: "Instrument Serif", Georgia, serif; font-size: 52px; line-height: 1; background: linear-gradient(#f6e3b0, #c99a4e); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
   @media (max-width: 960px) {
     .nav ul { display: none; }
@@ -322,8 +318,6 @@
     .soon-pill { flex-direction: column; text-align: center; gap: 12px; }
     .soon-line { white-space: normal; }
     .soon-sub { align-self: center; }
-    .soon-logo-wrap { height: 96px; }
-    .soon-bang { font-size: 42px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
 </style>
@@ -635,7 +629,7 @@
 <!-- Coming-soon course: full-width green band -->
 <div class="soon-band">
   <div class="wrap">
-    <div class="soon-pill"><span class="soon-tag">Coming soon!</span><span class="soon-text"><span class="soon-line"><span class="soon-logo-wrap"><img class="soon-logo" src="assets/pme-logo.webp" width="560" height="260" alt="Parenting Made Easier!"><span class="soon-bang" aria-hidden="true">!</span></span></span><span class="soon-sub">Weekly video tips</span></span></div>
+    <div class="soon-pill"><span class="soon-tag">Coming soon!</span><span class="soon-text"><span class="soon-line"><em>Parenting Made Easier!</em></span><span class="soon-sub">Weekly video tips</span></span></div>
   </div>
 </div>
 
