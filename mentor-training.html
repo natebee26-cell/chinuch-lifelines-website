@@ -361,7 +361,9 @@
   /* Mentor training: email box */
   .contact-box { background: var(--sand); border-radius: var(--r); padding: 44px 28px; max-width: 720px; margin: 0 auto; text-align: center; }
   .contact-box .lead { margin-top: 12px; }
-  .contact-box .pill { margin-top: 24px; }
+  .contact-box .row { display: flex; gap: 10px; max-width: 520px; margin: 24px auto 0; }
+  .contact-box .row input { flex: 1; min-width: 0; padding: 14px 18px; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff; }
+  @media (max-width: 560px) { .contact-box .row { flex-direction: column; } }
   .contact-box .addr { display: block; margin-top: 14px; color: var(--muted); font-size: .95rem; }
   .contact-box .addr a { color: var(--green); font-weight: 600; }
 </style>
@@ -409,12 +411,24 @@
     <div class="contact-box">
       <span class="tag">Details coming soon</span>
       <h2>Interested in becoming a <em>Chinuch LifeLines Coach?</em></h2>
-      <p class="lead">Email us and we'll get back to you with all the details.</p>
-      <a class="pill pill-cta pill-lg" href="mailto:admin@chinuch-lifelines.org?subject=Parent%20Mentor%20Training">Email us about Mentor Training →</a>
+      <p class="lead">Enter your email &amp; we will get back to you with the details.</p>
+      <form class="row" id="coach-form">
+        <label class="sr" for="coach-email">Email address</label>
+        <input id="coach-email" name="email" type="email" placeholder="Your email address" required>
+        <button class="pill pill-cta">Send</button>
+      </form>
       <span class="addr">Or write to <a href="mailto:admin@chinuch-lifelines.org?subject=Parent%20Mentor%20Training">admin@chinuch-lifelines.org</a></span>
     </div>
   </div>
 </section>
+
+<script>
+  // Until a mailing service is connected, the request arrives by email.
+  document.getElementById('coach-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    location.href = 'mailto:admin@chinuch-lifelines.org?subject=' + encodeURIComponent('Becoming a Chinuch LifeLines Coach') + '&body=' + encodeURIComponent('Please send me the details. My email: ' + e.target.email.value);
+  });
+</script>
 
 <footer id="contact">
   <div class="wrap">
