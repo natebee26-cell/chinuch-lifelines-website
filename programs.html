@@ -345,10 +345,9 @@
   /* A–Z pathways */
   .pathways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; text-align: left; }
   .pathway { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
-  .pw-img { aspect-ratio: 16 / 10; background: radial-gradient(circle at 75% 20%, rgba(242,193,78,.35), transparent 55%), var(--green); color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 20px; }
-  .pw-img span { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--yellow); font-weight: 700; }
-  .pw-img b { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 3.4rem; line-height: 1; }
-  .pathway h3 { font-size: 1.5rem; line-height: 1.1; margin: 18px 20px 4px; }
+  .pw-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
+  .pw-no { margin: 18px 20px 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); font-weight: 700; }
+  .pathway h3 { font-size: 1.5rem; line-height: 1.1; margin: 4px 20px 4px; }
   .pw-meta { margin: 0 20px 12px; color: var(--muted); font-size: .88rem; }
   .pathway details { margin: 0 20px 16px; }
   .pathway ol { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: .9rem; display: grid; gap: 4px; }
@@ -443,60 +442,68 @@
     <h2>Purchase the entire course <em>or each pathway separately</em></h2>
     <div class="pathways">
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>1</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-1.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 1</span>
         <h3>Chinuch</h3>
         <p class="pw-meta">2 classes</p>
         <details><summary>See more</summary><ol><li>Is it different today? Why and how</li><li>Then and Now: replace harshness and fighting with acceptance, trust and the positive pathways</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%201%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>2</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-2.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 2</span>
         <h3>Love</h3>
         <p class="pw-meta">4 classes</p>
         <details><summary>See more</summary><ol><li>3 languages / 3 minimums</li><li>Actions Speak + Real Feel</li><li>Child Before Chinuch</li><li>Default and how</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%202%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>3</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-3.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 3</span>
         <h3>Positive</h3>
         <p class="pw-meta">6 classes</p>
         <details><summary>See more</summary><ol><li>Positivising: why and how</li><li>On Credit / Hijacking</li><li>For Granted</li><li>Setting Up for Success</li><li>Partial Success / Lack of Negative = Positive</li><li>Correcting Correctly</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%203%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>4</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-4.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 4</span>
         <h3>Discipline</h3>
         <p class="pw-meta">3 classes</p>
         <details><summary>See more</summary><ol><li>2 Types of children / Experiment with AIG</li><li>3 C’s / Consistency</li><li>Ages and Stages / putting Discipline in its place</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%204%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>5</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-5.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 5</span>
         <h3>The Difficult Child: Reactive Tools</h3>
         <p class="pw-meta">7 classes</p>
         <details><summary>See more</summary><ol><li>Love as a reactive tool / Giving over Control</li><li>U Priority</li><li>Explain the Gain</li><li>Making it Easier</li><li>Discussion</li><li>Chutzpah Part 1</li><li>Chutzpah Part 2</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%205%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>6</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-6.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 6</span>
         <h3>Peaceful (Sibling Rivalry)</h3>
         <p class="pw-meta">6 classes</p>
         <details><summary>See more</summary><ol><li>True Chinuch (including 7 exceptions)</li><li>Practicing</li><li>Teaching</li><li>Motivating</li><li>Methods for victims</li><li>Building the Bully and Jealousy</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%206%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>7</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-7.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 7</span>
         <h3>Strong Mother</h3>
         <p class="pw-meta">8 classes</p>
         <details><summary>See more</summary><ol><li>Empowered Mother</li><li>Negative Attention: Types of Button Pressing</li><li>Negative Attention: the Child’s angle</li><li>Solutions</li><li>I am Stuck</li><li>The Discouraged Child</li><li>Misplaced Pity</li><li>Spoiling</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%207%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
       <article class="pathway">
-        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>8</b></div>
+        <img class="pw-img" src="assets/pathways/pathway-8.jpg" alt="" loading="lazy">
+        <span class="pw-no">Pathway 8</span>
         <h3>Love for Yiddishkeit</h3>
         <p class="pw-meta">5 classes</p>
         <details><summary>See more</summary><ol><li>Shabbos Table Part 1</li><li>Shabbos Table Part 2</li><li>Davening Part 1</li><li>Davening Part 2</li><li>Emunah</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%208%20purchase" class="pill pill-dark">Buy →</a></div>
+        <div class="pw-buy"><span class="pw-price">$17.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
       </article>
     </div>
   </div>
