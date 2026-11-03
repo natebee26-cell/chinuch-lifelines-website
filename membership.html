@@ -61,8 +61,19 @@
   .hero-frame > img.hero-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) saturate(1.1); transform: scale(1.1); }
   .hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,35,29,.6), rgba(22,35,29,.5) 40%, rgba(22,35,29,.88)); }
   .nav { position: relative; z-index: 3; padding: 14px 24px 4px; display: flex; align-items: flex-start; gap: 28px; color: #fff; }
-  .brand { flex-shrink: 0; }
+  .brand { flex-shrink: 0; position: relative; }
   .brand img { width: clamp(280px, 33vw, 520px); height: auto; }
+  /* Living logo: a light glint sweeps across the tree; on the front page the tree first grows out of the hands */
+  .logo-fx { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 1123 / 363; pointer-events: none; }
+  .logo-fx > span { position: absolute; }
+  .logo-fx .crown { inset: 0; background: var(--logo-src) 0 0 / 100% 100% no-repeat; clip-path: ellipse(10.5% 21% at 10.9% 21.6%); transform-origin: 10.9% 42%; opacity: 0; }
+  .logo-fx .shine { left: 0; top: 0; width: 22%; height: 72%; -webkit-mask: var(--logo-src) 0 0 / 454.5% 138.9% no-repeat; mask: var(--logo-src) 0 0 / 454.5% 138.9% no-repeat; background: linear-gradient(100deg, transparent 0%, rgba(255,247,214,.95) 50%, transparent 100%) no-repeat; background-size: 60% 100%; background-position: -150% 0; animation: logo-sweep 6s ease-in-out 1s infinite; }
+  .logo-anim.grow .shine { animation-delay: 2.4s; }
+  .logo-anim.play img { -webkit-mask: radial-gradient(10.2% 20.6% at 10.9% 21.6%, transparent 98%, #000 100%); mask: radial-gradient(10.2% 20.6% at 10.9% 21.6%, transparent 98%, #000 100%); animation: logo-name .9s ease-out 1.2s both; }
+  .logo-anim.play .crown { animation: logo-grow 1.2s cubic-bezier(.2, .85, .25, 1.12) .25s both; }
+  @keyframes logo-sweep { 0% { background-position: -150% 0; } 30%, 100% { background-position: 250% 0; } }
+  @keyframes logo-grow { from { transform: scale(0); opacity: 0; } 30% { opacity: 1; } to { transform: scale(1); opacity: 1; } }
+  @keyframes logo-name { from { clip-path: polygon(0 0, 22% 0, 22% 73%, 0 73%); } to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
   .nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 22px; list-style: none; margin: 0 0 0 auto; padding: 8px 0 0; font-size: .95rem; font-weight: 500; white-space: nowrap; }
   .nav .pill { white-space: nowrap; }
   .nav ul a:hover { opacity: .75; }
@@ -404,7 +415,7 @@
 <div class="top">
   <div class="top-frame">
     <nav class="nav" aria-label="Main">
-      <a href="index.html" class="brand"><img src="assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
+      <a href="index.html" class="brand logo-anim" style="--logo-src: url('assets/logo-light.webp')"><img src="assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines"><span class="logo-fx" aria-hidden="true"><span class="shine"></span></span></a>
       <ul>
         <li><a href="index.html#webinars">Webinars</a></li>
         <li><a href="programs.html">Books &amp; Programs</a></li>
