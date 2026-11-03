@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — Chinuch LifeLines</title>
-<meta name="description" content="Articles and Shabbos-table discussions from Chinuch LifeLines and Rabbi Dov Brezak.">
+<title>For later — Chinuch LifeLines (private)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Ongoing parenting programs with Rabbi Dov Brezak on Zoom: weekly workshops for mothers and the A–Z of Parenting Made Easy course.">
 <meta name="theme-color" content="#16231d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -313,6 +314,8 @@
   .ticks svg { flex-shrink: 0; margin-top: 2px; }
   .progs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; text-align: left; }
   .prog { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 32px; display: flex; flex-direction: column; }
+  .prog-img { width: calc(100% + 64px); max-width: none; margin: -32px -32px 22px; aspect-ratio: 2 / 1; height: auto; object-fit: cover; border-radius: var(--r) var(--r) 0 0; }
+  .course-img { width: 100%; aspect-ratio: 2 / 1; height: auto; object-fit: cover; border-radius: 18px; margin-bottom: 22px; }
   .prog h3 { font-size: 2rem; margin: 14px 0 12px; }
   .prog p { color: var(--muted); margin: 0 0 12px; }
   .prog p a { color: var(--green); font-weight: 600; }
@@ -325,7 +328,36 @@
     .course, .progs { grid-template-columns: 1fr; }
     .course { padding: 28px 22px; gap: 20px; }
     .prog { padding: 26px 22px; }
+    .prog-img { width: calc(100% + 44px); margin: -26px -22px 20px; }
   }
+  /* Books: leaning covers with a soft reflection */
+  .books { display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap; gap: 40px clamp(48px, 9vw, 130px); margin-top: 44px; }
+  .book { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 240px; }
+  .book .cover { height: 300px; display: flex; align-items: flex-end; margin-bottom: 84px; }
+  .book img { height: 300px; width: auto; -webkit-box-reflect: below 3px linear-gradient(transparent 68%, rgba(255,255,255,.3)); transition: transform .35s ease; filter: drop-shadow(0 18px 18px rgba(22,35,29,.22)); }
+  .book img.white-bg { mix-blend-mode: multiply; }
+  .book.lean-l img { transform: perspective(900px) rotateY(12deg) rotate(-3deg); }
+  .book.lean-r img { transform: perspective(900px) rotateY(-12deg) rotate(3deg); }
+  .book:hover img { transform: perspective(900px) translateY(-6px); }
+  .book-new { background: var(--yellow); color: var(--green-deep); font-size: .74rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
+  .book b { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.7rem; line-height: 1.1; text-align: center; }
+  .book .go { font-weight: 600; color: var(--green); font-size: .95rem; }
+
+  /* A–Z pathways */
+  .pathways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; text-align: left; }
+  .pathway { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
+  .pw-img { aspect-ratio: 16 / 10; background: radial-gradient(circle at 75% 20%, rgba(242,193,78,.35), transparent 55%), var(--green); color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 20px; }
+  .pw-img span { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--yellow); font-weight: 700; }
+  .pw-img b { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 3.4rem; line-height: 1; }
+  .pathway h3 { font-size: 1.5rem; line-height: 1.1; margin: 18px 20px 4px; }
+  .pw-meta { margin: 0 20px 12px; color: var(--muted); font-size: .88rem; }
+  .pathway details { margin: 0 20px 16px; }
+  .pathway ol { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: .9rem; display: grid; gap: 4px; }
+  .pw-buy { margin: auto 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pw-price { font-family: "Instrument Serif", serif; font-size: 1.8rem; color: var(--green); }
+  .pw-buy .pill { padding: 10px 18px; }
+  @media (max-width: 1024px) { .pathways { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .pathways { grid-template-columns: 1fr; } .book { width: 200px; } .book .cover, .book img { height: 250px; } .book .cover { margin-bottom: 70px; } }
   /* Blog page */
   .posts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .post-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 30px; display: flex; flex-direction: column; gap: 8px; transition: transform .2s ease, box-shadow .2s ease; }
@@ -345,52 +377,122 @@
     .posts { grid-template-columns: 1fr; }
     .post { padding: 30px 22px; }
   }
+  /* For-later page */
+  .later-note { background: var(--yellow); color: var(--green-deep); text-align: center; padding: 14px 20px; font-weight: 600; }
+  .later-item { border-top: 2px dashed var(--line); }
+  .later-label { display: block; max-width: 1180px; margin: 0 auto; padding: 18px 24px 0; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 </style>
 </head>
 <body>
+<div class="later-note">Private page: things taken off the site to revisit later. Not linked from anywhere.</div>
 
-<div class="top" id="top">
-  <div class="top-frame">
-    <nav class="nav" aria-label="Main">
-      <a href="index.html" class="brand"><img src="assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
-      <ul>
-        <li><a href="index.html#webinars">Webinars</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="index.html#tips">Free tips</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li><a href="index.html#rabbi">Rabbi Brezak</a></li>
-        <li><a href="blog.html" aria-current="page">Blog</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">☰</button>
-      </div>
-    </nav>
-    <div class="mobile-menu" onclick="this.classList.remove('open')">
-      <a href="index.html#webinars">Webinars</a>
-      <a href="programs.html">Programs</a>
-      <a href="index.html#tips">Free tips</a>
-      <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#rabbi">Rabbi Brezak</a>
-      <a href="blog.html">Blog</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a>
-      <a href="index.html#signup"><b>Join the free email list</b></a>
-    </div>
-    <div class="page-head">
-      <span class="tag on-dark">Blog</span>
-      <h1>From the <em>blog</em></h1>
-      <p>Articles and Shabbos-table discussions from Rabbi Brezak and Chinuch LifeLines.</p>
-    </div>
-  </div>
+<div class="later-item"><span class="later-label">Front page: big green "Free parenting tips" sign-up section</span>
+<!-- 12. FINAL CTA + soft fallback (daily tip) -->
+<div class="final" >
+  <h2>Free parenting tips from <em>Rabbi Brezak</em></h2>
+  <p>Practical, Torah-based ideas you can use at home, straight to your inbox. It's free, just add your email.</p>
+  <form class="news" onsubmit="event.preventDefault(); location.href='mailto:admin@chinuch-lifelines.org?subject=Join%20the%20free%20email%20list&body='+encodeURIComponent(this.email.value);">
+    <label class="sr" for="news-email-old">Email address</label>
+    <input id="news-email-old" name="email" type="email" placeholder="Your email address" required>
+    <button class="pill pill-cta">Join the free email list</button>
+  </form>
 </div>
 
-<section style="padding-top:48px">
-  <div class="wrap narrow">
-    <p class="center lead" style="margin:40px auto">New posts are coming soon.</p>
-    <!-- Posts hidden for now: move them out of this <template> to show them again -->
-    <template id="hidden-posts">
+
+</div>
+
+<div class="later-item"><span class="later-label">Front page: free tips #2 and #3 (placeholders)</span>
+<section><div class="wrap center"><div class="videos">
+      <a href="#" class="video"><div class="frame"><span class="play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#1e5a43"/></svg></span></div><h3>[Video tip title]</h3></a>
+      <a href="#" class="video"><div class="frame"><span class="play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#1e5a43"/></svg></span></div><h3>[Video tip title]</h3></a>
+</div></div></section>
+</div>
+
+<div class="later-item"><span class="later-label">Front page: Trained parenting coaches card</span>
+<section><div class="wrap"><div class="other">
+      <a href="mailto:admin@chinuch-lifelines.org?subject=Parenting%20coach%20request"><h3>Trained parenting coaches</h3><p>Weekly one-on-one guidance at a lower rate.</p><span class="go">Find a coach →</span></a>
+</div></div></section>
+</div>
+
+<div class="later-item"><span class="later-label">Front page: FAQ</span>
+<!-- 10. FAQ: remove last objections -->
+<section  style="padding-top:0">
+  <div class="wrap narrow center">
+    <span class="tag">Questions</span>
+    <h2>Good to <em>know</em></h2>
+    <div class="faq">
+      <details><summary>Who is this for?</summary><p>Parents of children of any age, from little ones to teenagers, who want practical guidance rooted in Torah values.</p></details>
+      <details><summary>How do I watch the programs?</summary><p>[How to access the webinars, e.g. online, any device, at your own pace.]</p></details>
+      <details><summary>I need personal help. Is there something one-on-one?</summary><p>Yes. You can book a private consultation with Rabbi Brezak, or weekly sessions with a trained parenting coach. See below.</p></details>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<div class="later-item"><span class="later-label">Programs page: weekly workshops</span>
+<!-- Weekly workshops -->
+<section>
+  <div class="wrap center">
+    <span class="tag">Live on Zoom</span>
+    <h2>Weekly <em>workshops</em></h2>
+    <p class="lead" style="margin-top:14px">$37 a month for each workshop, with a 3-month commitment.</p>
+    <div class="progs">
+      <article class="prog">
+        <img class="prog-img" src="assets/programs/coaching.jpg" width="800" height="400" alt="Coaching You Through" loading="lazy">
+        <div class="when"><b>Mondays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Coaching You <em>Through</em></h3>
+        <p>An interactive workshop with personal guidance from Rabbi Brezak. The focus is on putting the tools into practice and making them work, not on new information.</p><p>For parents who have taken Rabbi Brezak's workshops and already know the techniques. (Don't have the tools yet? Learn them in the <a href="index.html#webinars">webinar library</a>.)</p><p>Starting with sibling rivalry, then chutzpah, being assertive, discipline and much more.</p>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <img class="prog-img" src="assets/programs/teens.jpg" width="800" height="400" alt="Mothers of Teenagers" loading="lazy">
+        <div class="when"><b>Tuesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Mothers of <em>Teenagers</em></h3>
+        <p>Thrive, don't just survive! In this weekly workshop you will gain the tools to:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Build a meaningful relationship with your teen based on mutual trust</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Communicate effectively so you can understand your teen</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivate your teen</li></ul>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <img class="prog-img" src="assets/programs/emunah.jpg" width="800" height="400" alt="Growing in Emunah" loading="lazy">
+        <div class="when"><b>Wednesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
+        <h3>Growing in <em>Emunah</em></h3>
+        <p>Helping your children, and yourself, work on the one good middah that brings to all good middos: Emunah.</p>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+      <article class="prog">
+        <img class="prog-img" src="assets/programs/ask.jpg" width="800" height="400" alt="Ask Rabbi Brezak" loading="lazy">
+        <div class="when"><b>Thursdays · 9:00 pm IL / 2:00 pm EST</b><span>30 min · For mothers only</span></div>
+        <h3>Ask Rabbi <em>Brezak</em></h3>
+        <p>Chinuch questions come up all the time. Sign up and get:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Weekly live Q&amp;A:</b> get your questions answered live by Rabbi Brezak</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>The Chinuch Helpdesk:</b> send up to 2 questions a month and get an answer by email within 3 business days</span></li></ul>
+        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="later-item"><span class="later-label">Programs page: FAQ</span>
+<!-- FAQ -->
+<section  style="padding-top:0">
+  <div class="wrap narrow center">
+    <span class="tag">Questions</span>
+    <h2>Good to <em>know</em></h2>
+    <div class="faq">
+      <details><summary>The timing doesn't work for me. Can I get recordings?</summary><p>Yes! All classes are recorded, and you can sign up to receive the mp3 by email after each class.</p></details>
+      <details><summary>Can I listen on the phone?</summary><p>Yes. All classes are stored on our phone line system, which you can call into anytime.</p></details>
+      <details><summary>How does payment work?</summary><p>Each workshop costs $37 a month. You are charged on the date you sign up, and the charge recurs monthly unless it is cancelled.</p></details>
+      <details><summary>Can I cancel anytime?</summary><p>There is a 3-month commitment from when you sign up. After that, you may cancel at any time.</p></details>
+    </div>
+    <p class="micro" style="margin-top:22px">Can't find an answer? Email <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
+  </div>
+</section>
+
+</div>
+
+<div class="later-item"><span class="later-label">Blog page: posts</span>
+<section><div class="wrap">
     <div class="posts">
       <a class="post-card" href="#aunts-and-uncles"><span class="pdate">June 20, 2021</span><h3>Aunts and Uncles: What to Do?</h3><p>Should we let aunts and uncles kiss their nieces and nephews? Keeping our children safe with relatives.</p><span class="go">Read →</span></a>
       <a class="post-card" href="#last-shabbos-of-the-year"><span class="pdate">September 13, 2020</span><h3>The Last Shabbos of the Year!</h3><p>Two Shabbos-table discussions to have with your children before Rosh Hashanah.</p><span class="go">Read →</span></a>
@@ -535,19 +637,8 @@
       </div>
       <a href="#top" class="micro back">↑ Back to top</a>
     </article>
-    </template>
-  </div>
-</section>
+    </div></section>
+</div>
 
-<footer id="contact">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div><h4>Chinuch LifeLines</h4><p style="margin:0">Empowering Parents · Building Children<br>Under the auspices of Rabbi Dov Brezak<br>1174 E 23rd St, Brooklyn, NY 11210</p></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+17324409437">+1 732-440-9437</a></li><li><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li><li>Office hours 9:00 am – 5:00 pm</li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="programs.html">Programs</a></li><li><a href="index.html#webinars">Webinar library</a></li><li><a href="blog.html">Blog</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
-    </div>
-    <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
-  </div>
-</footer>
 </body>
 </html>

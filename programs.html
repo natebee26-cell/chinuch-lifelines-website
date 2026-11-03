@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Programs — Chinuch LifeLines</title>
+<title>Books &amp; Programs — Chinuch LifeLines</title>
 <meta name="description" content="Ongoing parenting programs with Rabbi Dov Brezak on Zoom: weekly workshops for mothers and the A–Z of Parenting Made Easy course.">
 <meta name="theme-color" content="#16231d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -329,6 +329,34 @@
     .prog { padding: 26px 22px; }
     .prog-img { width: calc(100% + 44px); margin: -26px -22px 20px; }
   }
+  /* Books: leaning covers with a soft reflection */
+  .books { display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap; gap: 40px clamp(48px, 9vw, 130px); margin-top: 44px; }
+  .book { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 240px; }
+  .book .cover { height: 300px; display: flex; align-items: flex-end; margin-bottom: 84px; }
+  .book img { height: 300px; width: auto; -webkit-box-reflect: below 3px linear-gradient(transparent 68%, rgba(255,255,255,.3)); transition: transform .35s ease; filter: drop-shadow(0 18px 18px rgba(22,35,29,.22)); }
+  .book img.white-bg { mix-blend-mode: multiply; }
+  .book.lean-l img { transform: perspective(900px) rotateY(12deg) rotate(-3deg); }
+  .book.lean-r img { transform: perspective(900px) rotateY(-12deg) rotate(3deg); }
+  .book:hover img { transform: perspective(900px) translateY(-6px); }
+  .book-new { background: var(--yellow); color: var(--green-deep); font-size: .74rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
+  .book b { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.7rem; line-height: 1.1; text-align: center; }
+  .book .go { font-weight: 600; color: var(--green); font-size: .95rem; }
+
+  /* A–Z pathways */
+  .pathways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; text-align: left; }
+  .pathway { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
+  .pw-img { aspect-ratio: 16 / 10; background: radial-gradient(circle at 75% 20%, rgba(242,193,78,.35), transparent 55%), var(--green); color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 20px; }
+  .pw-img span { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--yellow); font-weight: 700; }
+  .pw-img b { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 3.4rem; line-height: 1; }
+  .pathway h3 { font-size: 1.5rem; line-height: 1.1; margin: 18px 20px 4px; }
+  .pw-meta { margin: 0 20px 12px; color: var(--muted); font-size: .88rem; }
+  .pathway details { margin: 0 20px 16px; }
+  .pathway ol { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: .9rem; display: grid; gap: 4px; }
+  .pw-buy { margin: auto 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pw-price { font-family: "Instrument Serif", serif; font-size: 1.8rem; color: var(--green); }
+  .pw-buy .pill { padding: 10px 18px; }
+  @media (max-width: 1024px) { .pathways { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .pathways { grid-template-columns: 1fr; } .book { width: 200px; } .book .cover, .book img { height: 250px; } .book .cover { margin-bottom: 70px; } }
 </style>
 </head>
 <body>
@@ -339,12 +367,10 @@
       <a href="index.html" class="brand"><img src="assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines"></a>
       <ul>
         <li><a href="index.html#webinars">Webinars</a></li>
-        <li><a href="programs.html" aria-current="page">Programs</a></li>
+        <li><a href="programs.html" aria-current="page">Books &amp; Programs</a></li>
         <li><a href="index.html#tips">Free tips</a></li>
         <li><a href="index.html#reviews">Reviews</a></li>
         <li><a href="index.html#rabbi">Rabbi Brezak</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li>
       </ul>
       <div class="nav-right">
@@ -353,28 +379,42 @@
     </nav>
     <div class="mobile-menu" onclick="this.classList.remove('open')">
       <a href="index.html#webinars">Webinars</a>
-      <a href="programs.html">Programs</a>
+      <a href="programs.html">Books &amp; Programs</a>
       <a href="index.html#tips">Free tips</a>
       <a href="index.html#reviews">Reviews</a>
       <a href="index.html#rabbi">Rabbi Brezak</a>
-      <a href="blog.html">Blog</a>
-      <a href="index.html#faq">FAQ</a>
       <a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a>
       <a href="index.html#signup"><b>Join the free email list</b></a>
     </div>
     <div class="page-head">
-      <span class="tag on-dark">Ongoing programs</span>
-      <h1>Programs with <em>Rabbi Brezak</em></h1>
-      <p>Weekly workshops on Zoom. Join live on Zoom, call in by phone, or listen to the recording afterward.</p>
-      <ul class="facts">
-        <li><b>$37</b> a month per workshop</li>
-        <li>Live on Zoom</li>
-        <li>By phone or recording</li>
-        <li>3-month commitment</li>
-      </ul>
+      <span class="tag on-dark">Books &amp; programs</span>
+      <h1>Books &amp; Programs by <em>Rabbi Brezak</em></h1>
+      <p>Rabbi Brezak's books, and the complete A–Z parenting course you can learn at your own pace.</p>
     </div>
   </div>
 </div>
+
+<!-- Books -->
+<section id="books" style="padding-bottom:0">
+  <div class="wrap center">
+    <span class="tag">Books</span>
+    <h2>Books by <em>Rabbi Brezak</em></h2>
+    <div class="books">
+      <a class="book lean-l" href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">
+        <span class="cover"><img src="assets/book-cover.webp" width="500" height="731" alt="Parenting in Turbulent Times by Rabbi Dov Brezak"></span>
+        <span class="book-new">New release</span>
+        <b>Parenting in Turbulent Times</b>
+        <span class="go">Order from ArtScroll →</span>
+      </a>
+      <a class="book lean-r" href="https://www.artscroll.com/Books/9781578197552.html" target="_blank" rel="noopener">
+        <span class="cover"><img class="white-bg" src="assets/books/chinuch-in-turbulent-times.jpg" width="200" height="300" alt="Chinuch in Turbulent Times by Rabbi Dov Brezak"></span>
+        <span class="book-new" style="visibility:hidden">Bestseller</span>
+        <b>Chinuch in Turbulent Times</b>
+        <span class="go">Order from ArtScroll →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- Pre-recorded course -->
 <section style="padding-bottom:0">
@@ -382,13 +422,13 @@
     <div class="course">
       <div>
         <span class="tag">Pre-recorded course</span>
-        <h2>The A–Z of Parenting <em>Made Easy</em></h2>
+        <h2>The A–Z of <em>Parenting</em></h2>
         <p class="lead" style="margin-top:16px">A comprehensive chinuch course covering all the essentials of parenting today: 41 recorded classes and 8 pathways to effective parenting.</p>
         <div class="price">$147</div>
-        <a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-cta pill-lg">Purchase the course →</a>
+        <a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-cta pill-lg">Purchase the entire course →</a>
       </div>
       <div>
-        <img class="course-img" src="assets/programs/a-z.jpg" width="800" height="400" alt="The A–Z of Parenting Made Easy">
+        <img class="course-img" src="assets/programs/a-z.jpg" width="800" height="400" alt="The A–Z of Parenting">
         <h3 style="font-size:1.6rem">Topics include</h3>
         <ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Is chinuch different today? Why and how</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Fighter Child vs. the Acceptor Child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Methods for a difficult child</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivating our children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Helping victims</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Empowering parents (and helping you get unstuck!)</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Spoiling children</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The Shabbos table</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>And much, much more</li></ul>
       </div>
@@ -396,57 +436,69 @@
   </div>
 </section>
 
-<!-- Weekly workshops -->
-<section>
+<!-- The 8 pathways, sold separately -->
+<section id="pathways">
   <div class="wrap center">
-    <span class="tag">Live on Zoom</span>
-    <h2>Weekly <em>workshops</em></h2>
-    <p class="lead" style="margin-top:14px">$37 a month for each workshop, with a 3-month commitment.</p>
-    <div class="progs">
-      <article class="prog">
-        <img class="prog-img" src="assets/programs/coaching.jpg" width="800" height="400" alt="Coaching You Through" loading="lazy">
-        <div class="when"><b>Mondays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
-        <h3>Coaching You <em>Through</em></h3>
-        <p>An interactive workshop with personal guidance from Rabbi Brezak. The focus is on putting the tools into practice and making them work, not on new information.</p><p>For parents who have taken Rabbi Brezak's workshops and already know the techniques. (Don't have the tools yet? Learn them in the <a href="index.html#webinars">webinar library</a>.)</p><p>Starting with sibling rivalry, then chutzpah, being assertive, discipline and much more.</p>
-        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+    <span class="tag">8 pathways to effective parenting</span>
+    <h2>Purchase the entire course <em>or each pathway separately</em></h2>
+    <div class="pathways">
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>1</b></div>
+        <h3>Chinuch</h3>
+        <p class="pw-meta">2 classes</p>
+        <details><summary>See more</summary><ol><li>Is it different today? Why and how</li><li>Then and Now: replace harshness and fighting with acceptance, trust and the positive pathways</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%201%20purchase" class="pill pill-dark">Buy →</a></div>
       </article>
-      <article class="prog">
-        <img class="prog-img" src="assets/programs/teens.jpg" width="800" height="400" alt="Mothers of Teenagers" loading="lazy">
-        <div class="when"><b>Tuesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
-        <h3>Mothers of <em>Teenagers</em></h3>
-        <p>Thrive, don't just survive! In this weekly workshop you will gain the tools to:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Build a meaningful relationship with your teen based on mutual trust</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Communicate effectively so you can understand your teen</li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Motivate your teen</li></ul>
-        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>2</b></div>
+        <h3>Love</h3>
+        <p class="pw-meta">4 classes</p>
+        <details><summary>See more</summary><ol><li>3 languages / 3 minimums</li><li>Actions Speak + Real Feel</li><li>Child Before Chinuch</li><li>Default and how</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%202%20purchase" class="pill pill-dark">Buy →</a></div>
       </article>
-      <article class="prog">
-        <img class="prog-img" src="assets/programs/emunah.jpg" width="800" height="400" alt="Growing in Emunah" loading="lazy">
-        <div class="when"><b>Wednesdays · 9:00 pm IL / 2:00 pm EST</b><span>45 min · For mothers only</span></div>
-        <h3>Growing in <em>Emunah</em></h3>
-        <p>Helping your children, and yourself, work on the one good middah that brings to all good middos: Emunah.</p>
-        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>3</b></div>
+        <h3>Positive</h3>
+        <p class="pw-meta">6 classes</p>
+        <details><summary>See more</summary><ol><li>Positivising: why and how</li><li>On Credit / Hijacking</li><li>For Granted</li><li>Setting Up for Success</li><li>Partial Success / Lack of Negative = Positive</li><li>Correcting Correctly</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%203%20purchase" class="pill pill-dark">Buy →</a></div>
       </article>
-      <article class="prog">
-        <img class="prog-img" src="assets/programs/ask.jpg" width="800" height="400" alt="Ask Rabbi Brezak" loading="lazy">
-        <div class="when"><b>Thursdays · 9:00 pm IL / 2:00 pm EST</b><span>30 min · For mothers only</span></div>
-        <h3>Ask Rabbi <em>Brezak</em></h3>
-        <p>Chinuch questions come up all the time. Sign up and get:</p><ul class="ticks"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Weekly live Q&amp;A:</b> get your questions answered live by Rabbi Brezak</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e5a43" stroke-width="2.4" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>The Chinuch Helpdesk:</b> send up to 2 questions a month and get an answer by email within 3 business days</span></li></ul>
-        <a href="https://form.jotform.com/223375686576168" target="_blank" rel="noopener" class="pill pill-dark">Sign up →</a>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>4</b></div>
+        <h3>Discipline</h3>
+        <p class="pw-meta">3 classes</p>
+        <details><summary>See more</summary><ol><li>2 Types of children / Experiment with AIG</li><li>3 C’s / Consistency</li><li>Ages and Stages / putting Discipline in its place</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%204%20purchase" class="pill pill-dark">Buy →</a></div>
+      </article>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>5</b></div>
+        <h3>The Difficult Child: Reactive Tools</h3>
+        <p class="pw-meta">7 classes</p>
+        <details><summary>See more</summary><ol><li>Love as a reactive tool / Giving over Control</li><li>U Priority</li><li>Explain the Gain</li><li>Making it Easier</li><li>Discussion</li><li>Chutzpah Part 1</li><li>Chutzpah Part 2</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%205%20purchase" class="pill pill-dark">Buy →</a></div>
+      </article>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>6</b></div>
+        <h3>Peaceful (Sibling Rivalry)</h3>
+        <p class="pw-meta">6 classes</p>
+        <details><summary>See more</summary><ol><li>True Chinuch (including 7 exceptions)</li><li>Practicing</li><li>Teaching</li><li>Motivating</li><li>Methods for victims</li><li>Building the Bully and Jealousy</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%206%20purchase" class="pill pill-dark">Buy →</a></div>
+      </article>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>7</b></div>
+        <h3>Strong Mother</h3>
+        <p class="pw-meta">8 classes</p>
+        <details><summary>See more</summary><ol><li>Empowered Mother</li><li>Negative Attention: Types of Button Pressing</li><li>Negative Attention: the Child’s angle</li><li>Solutions</li><li>I am Stuck</li><li>The Discouraged Child</li><li>Misplaced Pity</li><li>Spoiling</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%207%20purchase" class="pill pill-dark">Buy →</a></div>
+      </article>
+      <article class="pathway">
+        <div class="pw-img" aria-hidden="true"><span>Pathway</span><b>8</b></div>
+        <h3>Love for Yiddishkeit</h3>
+        <p class="pw-meta">5 classes</p>
+        <details><summary>See more</summary><ol><li>Shabbos Table Part 1</li><li>Shabbos Table Part 2</li><li>Davening Part 1</li><li>Davening Part 2</li><li>Emunah</li></ol></details>
+        <div class="pw-buy"><span class="pw-price">[Price]</span><a href="mailto:admin@chinuch-lifelines.org?subject=Pathway%208%20purchase" class="pill pill-dark">Buy →</a></div>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" style="padding-top:0">
-  <div class="wrap narrow center">
-    <span class="tag">Questions</span>
-    <h2>Good to <em>know</em></h2>
-    <div class="faq">
-      <details><summary>The timing doesn't work for me. Can I get recordings?</summary><p>Yes! All classes are recorded, and you can sign up to receive the mp3 by email after each class.</p></details>
-      <details><summary>Can I listen on the phone?</summary><p>Yes. All classes are stored on our phone line system, which you can call into anytime.</p></details>
-      <details><summary>How does payment work?</summary><p>Each workshop costs $37 a month. You are charged on the date you sign up, and the charge recurs monthly unless it is cancelled.</p></details>
-      <details><summary>Can I cancel anytime?</summary><p>There is a 3-month commitment from when you sign up. After that, you may cancel at any time.</p></details>
-    </div>
-    <p class="micro" style="margin-top:22px">Can't find an answer? Email <a href="mailto:admin@chinuch-lifelines.org" style="color:var(--green);font-weight:600">admin@chinuch-lifelines.org</a></p>
   </div>
 </section>
 
@@ -454,8 +506,8 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><h4>Chinuch LifeLines</h4><p style="margin:0">Empowering Parents · Building Children<br>Under the auspices of Rabbi Dov Brezak<br>1174 E 23rd St, Brooklyn, NY 11210</p></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+17324409437">+1 732-440-9437</a></li><li><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li><li>Office hours 9:00 am – 5:00 pm</li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="programs.html">Programs</a></li><li><a href="index.html#webinars">Webinar library</a></li><li><a href="blog.html">Blog</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
+      <div><h4>Contact us</h4><ul><li><a href="tel:+17324409437">+1 732-440-9437</a></li><li><a href="mailto:admin@chinuch-lifelines.org">admin@chinuch-lifelines.org</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="programs.html">Books &amp; Programs</a></li><li><a href="index.html#webinars">Webinar library</a></li><li><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">New book</a></li><li><a href="#">Donate</a></li><li><a href="https://torahanytime.com/speakers/889" target="_blank" rel="noopener">TorahAnytime</a></li></ul></div>
     </div>
     <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
   </div>
