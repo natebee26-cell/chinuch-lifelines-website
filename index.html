@@ -169,6 +169,7 @@
   .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .9rem; color: rgba(255,255,255,.8); }
   .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
   .quote { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; text-align: left; }
+  .quote:last-child:nth-child(3n+1) { grid-column: 2; } /* a lone last review sits in the middle */
   .quote p { font-family: "Instrument Serif", serif; font-size: 1.45rem; line-height: 1.2; margin: 12px 0 auto; }
   .who { display: flex; align-items: center; gap: 10px; margin-top: 22px; font-size: .88rem; color: rgba(255,255,255,.75); }
   .who span { width: 36px; height: 36px; border-radius: 50%; background: var(--yellow); color: var(--green-deep); display: grid; place-items: center; font-weight: 700; font-size: .78rem; }
@@ -297,6 +298,7 @@
     .pains { grid-template-columns: 1fr 1fr; }
     .inside-grid, .rabbi-grid, .other, .foot-grid { grid-template-columns: 1fr; }
     .steps, .videos, .quotes { grid-template-columns: 1fr; }
+    .quote:last-child:nth-child(3n+1) { grid-column: auto; }
     section { padding: 60px 0; }
     .rabbi-photo { min-height: 360px; }
   }
@@ -655,6 +657,7 @@
       <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Thank you for your amazing workshops. I really gained so much from them."</p><div class="who"><span>HR</span>H.R., Manchester, UK</div></div>
       <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</p><div class="who"><span>NS</span>N.S., Israel</div></div>
       <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</p><div class="who"><span>GA</span>G.A., Brooklyn, NY</div></div>
+      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Since I started attending the Rav's workshops, my life changed. I've been able to accomplish so much thanks to what Rabbi Brezak has taught me."</p><div class="who"><span>RJ</span>R.J., Mexico City</div></div>
     </div>
   </div>
 </section>
