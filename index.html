@@ -143,8 +143,10 @@
   .rabbi-text { background: var(--mint); border-radius: 22px; padding: 44px; display: flex; flex-direction: column; justify-content: center; }
   .rabbi-text h2 { margin-bottom: 16px; }
   .rabbi-text p { color: #3d4b44; margin: 0 0 14px; }
-  .creds { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 22px; }
-  .creds span { background: #fff; border-radius: 999px; padding: 7px 14px; font-size: .82rem; font-weight: 500; }
+  .rabbi-facts { list-style: none; padding: 0; margin: 14px 0 22px; display: grid; gap: 10px; }
+  .rabbi-facts li { position: relative; padding-left: 32px; font-size: 1.05rem; line-height: 1.4; }
+  .rabbi-facts li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--yellow); font-size: .78rem; font-weight: 700; display: grid; place-items: center; }
+  .rabbi-facts b { color: var(--green-deep); }
   .book-mini { display: flex; gap: 16px; align-items: center; background: #fff; border-radius: 18px; padding: 14px; }
   .book-mini img { width: 64px; border-radius: 6px; }
   .book-mini b { display: block; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.2rem; }
@@ -681,8 +683,13 @@
     <div class="rabbi-text">
       <span class="tag" style="align-self:flex-start">Your guide</span>
       <h2>Rabbi <em>Dov Brezak</em></h2>
+      <ul class="rabbi-facts">
+        <li>Author of the bestseller <b>Chinuch in Turbulent Times</b></li>
+        <li><b>30+ years</b> as principal &amp; educator</li>
+        <li>Helped <b>thousands of families</b> in 8+ countries</li>
+        <li><b>100+ Shiurim</b> on TorahAnytime</li>
+      </ul>
       <p>A leading voice in Jewish education, with decades of experience as a parent, principal, author, lecturer and consultant. He founded Chinuch LifeLines so parents everywhere can get practical, encouraging guidance rooted in Torah values and love for every child.</p>
-      <div class="creds"><span>Principal &amp; educator</span><span>ArtScroll author</span><span>Lecturer &amp; consultant</span></div>
       <div class="book-mini">
         <img src="assets/book-cover.webp" alt="" style="border-radius:0">
         <div><b>New: Parenting in Turbulent Times</b><a href="https://www.artscroll.com/Books/9781422649268.html" target="_blank" rel="noopener">Order from ArtScroll →</a></div>
