@@ -63,11 +63,11 @@
   .nav { position: relative; z-index: 3; padding: 14px 24px 4px; display: flex; align-items: flex-start; gap: 28px; color: #fff; }
   .brand { flex-shrink: 0; position: relative; top: 14px; left: 26px; } /* nudged in from the corner, header height unchanged */
   .brand img { width: clamp(280px, 33vw, 520px); height: auto; }
-  /* Living logo: a light glint sweeps across the tree and hands */
+  /* Living logo: a light glint sweeps from the tree through the word Chinuch */
   .logo-fx { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 1123 / 363; pointer-events: none; }
   .logo-fx > span { position: absolute; }
-  .logo-fx .shine { left: 0; top: 0; width: 22%; height: 72%; -webkit-mask: var(--logo-src) 0 0 / 454.5% 138.9% no-repeat; mask: var(--logo-src) 0 0 / 454.5% 138.9% no-repeat; background: linear-gradient(100deg, transparent 0%, rgba(255,247,214,.95) 50%, transparent 100%) no-repeat; background-size: 60% 100%; background-position: -150% 0; animation: logo-sweep 6s ease-in-out 1s infinite; }
-  @keyframes logo-sweep { 0% { background-position: -150% 0; } 30%, 100% { background-position: 250% 0; } }
+  .logo-fx .shine { left: 0; top: 0; width: 59%; height: 74%; -webkit-mask: var(--logo-src) 0 0 / 169.5% 135.1% no-repeat; mask: var(--logo-src) 0 0 / 169.5% 135.1% no-repeat; background: linear-gradient(100deg, transparent 0%, rgba(255,247,214,.95) 50%, transparent 100%) no-repeat; background-size: 22% 100%; background-position: -30% 0; animation: logo-sweep 6s ease-in-out 1s infinite; }
+  @keyframes logo-sweep { 0% { background-position: -30% 0; } 35%, 100% { background-position: 130% 0; } }
   .nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 22px; list-style: none; margin: 0 0 0 auto; padding: 8px 0 0; font-size: .95rem; font-weight: 500; white-space: nowrap; }
   .nav .pill { white-space: nowrap; }
   .nav ul a:hover { opacity: .75; }
