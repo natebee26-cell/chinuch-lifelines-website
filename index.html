@@ -190,7 +190,9 @@
   .member-row .pill { white-space: nowrap; }
   .blink { animation: soon-pulse 1.8s ease-out infinite; }
   @media (max-width: 760px) { .member-row { flex-direction: column; text-align: center; gap: 16px; } }
-  .videos.one { grid-template-columns: minmax(0, 560px); justify-content: center; }
+  .videos.one { grid-template-columns: minmax(0, 400px); justify-content: center; margin-top: 12px; }
+  #tips h2 { font-size: clamp(1.8rem, 3.4vw, 2.3rem); }
+  #tips .lead { max-width: none; margin-top: 2px; }
   .video .frame { aspect-ratio: 16/10; border-radius: 22px; background: #0d1512 url("assets/pme-title.webp") center / cover no-repeat; display: grid; place-items: center; position: relative; overflow: hidden; }
   .video .frame::after { content: ""; position: absolute; inset: 0; background: rgba(13,21,18,.15); transition: background .2s ease; }
   .video:hover .frame::after { background: rgba(13,21,18,0); }
@@ -202,7 +204,7 @@
   .video h3 { font-weight: 600; }
   .video .play { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.85); align-self: end; justify-self: end; margin: 14px; display: grid; place-items: center; transition: transform .15s ease; }
   .video:hover .play { transform: scale(1.08); }
-  .video h3 { font-family: Inter, sans-serif; font-weight: 500; font-size: .95rem; margin-top: 10px; }
+  .video h3 { font-family: Inter, sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
 
   /* Reviews wall */
   .reviews { background: var(--green-deep); color: #fff; padding: 34px 0; }
@@ -703,13 +705,13 @@
 </div>
 
 <!-- 7. FREE VALUE: let them taste it -->
-<section id="tips" style="padding-top:44px; padding-bottom:56px">
+<section id="tips" style="padding-top:20px; padding-bottom:24px">
   <div class="wrap center">
     <span class="tag">Free sample tip</span>
     <h2>Parenting Made <em>Easier!</em></h2>
     <p class="lead">Short weekly video tips from Rabbi Brezak, to make parenting easier for you. Watch this free sample tip.</p>
     <div class="videos one">
-      <div class="video"><div class="frame player"><iframe src="https://player.vimeo.com/video/1243465882?title=0&amp;byline=0&amp;portrait=0" title="Tip #1: Where Are You Going?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><h3>Where Are You Going?</h3><p class="micro" style="margin:4px 0 0">Can't see the video? <a href="https://vimeo.com/1243465882" target="_blank" rel="noopener" style="text-decoration:underline">Watch it on Vimeo</a></p></div>
+      <div class="video"><h3>Tip #1 - “Where are you going?”</h3><div class="frame player"><iframe src="https://player.vimeo.com/video/1243465882?title=0&amp;byline=0&amp;portrait=0" title="Tip #1: Where Are You Going?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
     </div>
   </div>
 </section>
