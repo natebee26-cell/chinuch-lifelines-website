@@ -68,6 +68,11 @@
   .logo-fx > span { position: absolute; }
   .logo-fx .shine { left: 0; top: 0; width: 100%; height: 74%; -webkit-mask: var(--logo-src) 0 0 / 100% 135.1% no-repeat; mask: var(--logo-src) 0 0 / 100% 135.1% no-repeat; background: linear-gradient(100deg, transparent 0%, rgba(255,247,214,.95) 50%, transparent 100%) no-repeat; background-size: 13% 100%; background-position: -16% 0; animation: logo-sweep 5s ease-in-out 1s infinite; }
   @keyframes logo-sweep { 0% { background-position: -16% 0; } 56%, 100% { background-position: 116% 0; } }
+  /* tagline sits below a clear gap in the logo, so it can move on its own as the sweep ends */
+  .logo-anim > img { clip-path: inset(0 0 23.4% 0); }
+  .logo-fx .tagline { left: 0; top: 76.6%; width: 100%; height: 23.4%; background: var(--logo-src) 0 100% / 100% 427.4% no-repeat; animation: tagline-lift 5s ease-in-out 1s infinite; }
+  @keyframes tagline-lift { 0%, 46% { transform: none; } 53% { transform: translateY(-6%) scale(1.02); } 62%, 100% { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .logo-fx .tagline { animation: none; } }
   .nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 22px; list-style: none; margin: 0 0 0 auto; padding: 8px 0 0; font-size: .95rem; font-weight: 500; white-space: nowrap; }
   .nav .pill { white-space: nowrap; }
   .nav ul a:hover { opacity: .75; }
@@ -365,7 +370,7 @@
   <div class="hero-frame">
     <img class="hero-bg" src="assets/hero-bg.jpg" alt="">
     <nav class="nav" aria-label="Main">
-      <a href="#top" class="brand logo-anim" style="--logo-src: url('assets/logo.webp')"><img src="assets/logo.webp" width="1123" height="363" alt="Chinuch LifeLines"><span class="logo-fx" aria-hidden="true"><span class="shine"></span></span></a>
+      <a href="#top" class="brand logo-anim" style="--logo-src: url('assets/logo.webp')"><img src="assets/logo.webp" width="1123" height="363" alt="Chinuch LifeLines"><span class="logo-fx" aria-hidden="true"><span class="shine"></span><span class="tagline"></span></span></a>
       <ul>
         <li><a href="#webinars">Webinars</a></li>
         <li><a href="programs.html">Books &amp; Programs</a></li>
