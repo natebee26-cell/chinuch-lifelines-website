@@ -156,6 +156,8 @@
   .rabbi-facts li { position: relative; padding-left: 32px; font-size: 1.05rem; line-height: 1.4; }
   .rabbi-facts li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--yellow); font-size: .78rem; font-weight: 700; display: grid; place-items: center; }
   .rabbi-facts b { color: var(--green-deep); }
+  /* one line per fact on computers */
+  @media (min-width: 961px) { .rabbi-facts li { font-size: clamp(.82rem, 1.25vw, 1rem); } }
   .book-mini { display: flex; gap: 16px; align-items: center; background: #fff; border-radius: 18px; padding: 14px; }
   .book-mini img { width: 64px; border-radius: 6px; }
   .book-mini b { display: block; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.2rem; }
@@ -702,8 +704,10 @@
     <div class="rabbi-text">
       <h2>Rabbi <em>Dov Brezak</em></h2>
       <ul class="rabbi-facts">
-        <li><b>Director of Chinuch LifeLines</b>, empowering parents &amp; building children across the world</li>
-        <li><b>Author</b> of ArtScroll’s bestseller <b>“Chinuch in Turbulent Times”</b>, and the newly released <b>“Parenting in Turbulent Times”</b></li>
+        <li><b>Director of Chinuch LifeLines</b></li>
+        <li>Empowering parents &amp; building children across the world</li>
+        <li><b>Author</b> of the bestseller <b>Chinuch in Turbulent Times</b></li>
+        <li><b>Author</b> of the newly released <b>Parenting in Turbulent Times</b></li>
         <li><b>30+ years</b> as educator, principal and parenting guide</li>
         <li>Provides <a href="mentor-training.html" style="text-decoration:underline"><b>Parent Mentor training</b></a> for men &amp; women</li>
         <li><b>110,964+ listeners</b> on TorahAnytime</li>
