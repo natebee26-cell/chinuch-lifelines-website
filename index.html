@@ -209,6 +209,13 @@
   /* Reviews wall */
   .reviews { background: var(--green-deep); color: #fff; padding: 34px 0; }
   .reviews h2 { font-size: clamp(1.8rem, 3.4vw, 2.3rem); }
+  /* all 6 reviews move slowly from edge to edge, and pause under the pointer */
+  .quotes-move { margin: 18px calc(50% - 50vw) 0; overflow: hidden; }
+  .quotes-track { display: flex; width: max-content; animation: ticker 52s linear infinite; }
+  .quotes-move:hover .quotes-track { animation-play-state: paused; }
+  .quotes-set { display: flex; flex: none; gap: 12px; padding-right: 12px; }
+  .quotes-set .quote { flex: none; width: 340px; }
+  @media (max-width: 560px) { .quotes-set .quote { width: 280px; } }
   @media (max-width: 760px) { .phone-order { display: flex; flex-direction: column; } .phone-order .personal { order: 1; padding-top: 0; } .phone-order .reviews { order: 2; } } /* phones: Rabbi, then Personal guidance, then reviews */
   .reviews .lead { color: rgba(255,255,255,.7); }
   .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .9rem; color: rgba(255,255,255,.8); }
@@ -287,7 +294,7 @@
   /* Webinar library: auto-scrolling strip, pauses on hover/touch */
   /* Reviews ticker: moves like a news line, pauses under the pointer */
   .ticker { background: var(--green); color: #fff; overflow: hidden; padding: 10px 0; }
-  .ticker-track { display: flex; width: max-content; animation: ticker 60s linear infinite; }
+  .ticker-track { display: flex; width: max-content; animation: ticker 130s linear infinite; }
   .ticker:hover .ticker-track { animation-play-state: paused; }
   .ticker-set { display: flex; flex: none; }
   .tick { display: flex; align-items: center; gap: 12px; padding-right: 64px; white-space: nowrap; }
@@ -436,6 +443,9 @@
       <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"I find the workshops informative and practical. The Q&amp;A is great, and my questions get answered."</span><b>D.G., Los Angeles</b></span>
       <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"Thank you so much for the wonderful course. My family and I are gaining tremendously from it."</span><b>D.L., Manchester</b></span>
       <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"Thank you for your amazing workshops. I really gained so much from them."</span><b>H.R., Manchester, UK</b></span>
+      <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</span><b>N.S., Israel</b></span>
+      <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</span><b>G.A., Brooklyn, NY</b></span>
+      <span class="tick"><span class="stars" aria-hidden="true">★★★★★</span><span class="tick-q">"Since I started attending the Rav's workshops, my life changed. He has made me realize I'm not alone, and he brings us help and solutions."</span><b>R.J., Mexico City</b></span>
     </div>
   </div>
 </div>
@@ -763,10 +773,17 @@
 <section class="reviews" id="reviews">
   <div class="wrap center">
     <h2>Parents <em>around the world</em></h2>
-    <div class="quotes">
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</p><div class="who"><span>NS</span>N.S., Israel</div></div>
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</p><div class="who"><span>GA</span>G.A., Brooklyn, NY</div></div>
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Since I started attending the Rav's workshops, my life changed. He has made me realize I'm not alone, and he brings us help and solutions."</p><div class="who"><span>RJ</span>R.J., Mexico City</div></div>
+    <div class="quotes-move">
+      <div class="quotes-track">
+      <div class="quotes-set">
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</p><div class="who"><span>NS</span>N.S., Israel</div></div>
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</p><div class="who"><span>GA</span>G.A., Brooklyn, NY</div></div>
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Since I started attending the Rav's workshops, my life changed. He has made me realize I'm not alone, and he brings us help and solutions."</p><div class="who"><span>RJ</span>R.J., Mexico City</div></div>
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"I find the workshops informative and practical. The Q&amp;A is great, and my questions get answered."</p><div class="who"><span>DG</span>D.G., Los Angeles</div></div>
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Thank you so much for the wonderful course. My family and I are gaining tremendously from it."</p><div class="who"><span>DL</span>D.L., Manchester</div></div>
+        <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Thank you for your amazing workshops. I really gained so much from them."</p><div class="who"><span>HR</span>H.R., Manchester, UK</div></div>
+      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -806,13 +823,14 @@
   const sticky = document.getElementById('sticky');
   new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(document.querySelector('.hero'));
 
-  // Reviews ticker: copies of the reviews keep the line full as it moves.
-  const tickerTrack = document.getElementById('ticker');
-  for (let i = 0; i < 2; i++) {
-    const copy = tickerTrack.firstElementChild.cloneNode(true);
-    copy.setAttribute('aria-hidden', 'true');
-    tickerTrack.append(copy);
-  }
+  // Moving reviews: copies of the reviews keep each line full as it moves.
+  document.querySelectorAll('.ticker-track, .quotes-track').forEach((track) => {
+    for (let i = 0; i < 2; i++) {
+      const copy = track.firstElementChild.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      track.append(copy);
+    }
+  });
 
   // Every "Join the free email list" link opens the pop-up form.
   const signup = document.getElementById('signup');
