@@ -209,7 +209,7 @@
   /* Reviews wall */
   .reviews { background: var(--green-deep); color: #fff; padding: 34px 0; }
   .reviews h2 { font-size: clamp(1.8rem, 3.4vw, 2.3rem); }
-  @media (max-width: 760px) { .phone-order { display: flex; flex-direction: column; } .phone-order .reviews { order: 1; } } /* phones: reviews go last, below Personal guidance */
+  @media (max-width: 760px) { .phone-order { display: flex; flex-direction: column; } .phone-order .personal { order: 1; padding-top: 0; } .phone-order .reviews { order: 2; } } /* phones: Rabbi, then Personal guidance, then reviews */
   .reviews .lead { color: rgba(255,255,255,.7); }
   .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .9rem; color: rgba(255,255,255,.8); }
   .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
@@ -727,14 +727,12 @@
 </div>
 
 <div class="phone-order">
-<!-- 8. REVIEWS WALL: social proof right before the price -->
-<section class="reviews" id="reviews">
-  <div class="wrap center">
-    <h2>Parents <em>around the world</em></h2>
-    <div class="quotes">
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</p><div class="who"><span>NS</span>N.S., Israel</div></div>
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</p><div class="who"><span>GA</span>G.A., Brooklyn, NY</div></div>
-      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Since I started attending the Rav's workshops, my life changed. He has made me realize I'm not alone, and he brings us help and solutions."</p><div class="who"><span>RJ</span>R.J., Mexico City</div></div>
+<!-- 11. OTHER PATHS: secondary offers -->
+<section class="personal">
+  <div class="wrap">
+    <div class="center"><span class="tag">Need one-on-one?</span><h2>Personal <em>guidance</em></h2></div>
+    <div class="other one">
+      <a href="mailto:admin@chinuch-lifelines.org?subject=Consultation%20request"><h3>Consult with Rabbi Brezak</h3><p>Private sessions by phone or Zoom.</p><span class="go">Request a meeting →</span></a>
     </div>
   </div>
 </section>
@@ -761,12 +759,14 @@
   </div>
 </section>
 
-<!-- 11. OTHER PATHS: secondary offers -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="center"><span class="tag">Need one-on-one?</span><h2>Personal <em>guidance</em></h2></div>
-    <div class="other one">
-      <a href="mailto:admin@chinuch-lifelines.org?subject=Consultation%20request"><h3>Consult with Rabbi Brezak</h3><p>Private sessions by phone or Zoom.</p><span class="go">Request a meeting →</span></a>
+<!-- 8. REVIEWS WALL: social proof right before the price -->
+<section class="reviews" id="reviews">
+  <div class="wrap center">
+    <h2>Parents <em>around the world</em></h2>
+    <div class="quotes">
+      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"The workshop made a big difference in our lives. It helped us build a very positive atmosphere in our home."</p><div class="who"><span>NS</span>N.S., Israel</div></div>
+      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Now I have the correct hashkafa in chinuch, and I'm able to be a better mom and help my kids reach their potential."</p><div class="who"><span>GA</span>G.A., Brooklyn, NY</div></div>
+      <div class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Since I started attending the Rav's workshops, my life changed. He has made me realize I'm not alone, and he brings us help and solutions."</p><div class="who"><span>RJ</span>R.J., Mexico City</div></div>
     </div>
   </div>
 </section>
