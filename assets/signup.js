@@ -1,7 +1,7 @@
 // Sign-up forms: each email is saved to the Google Sheet with the form it came from.
 // If the sheet can't be reached, the visitor gets a link to email us instead.
 (() => {
-  const SHEET_URL = ''; // the Google Sheet's web app address; while empty, forms open an email as before
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJ365W0KEqONAD742x3JsFEyXbYM7Dln9PFwKeLPMB4RaUfW4nyp4DDcRGBxOsWe3GTQ/exec'; // the Google Sheet's web app address; while empty, forms open an email as before
 
   document.querySelectorAll('form[data-source]').forEach((form) => {
     const button = form.querySelector('button');
