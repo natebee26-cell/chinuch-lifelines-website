@@ -162,7 +162,7 @@
   .rabbi-facts li::before { content: "✓"; position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--green); color: var(--yellow); font-size: .78rem; font-weight: 700; display: grid; place-items: center; }
   .rabbi-facts b { color: var(--green-deep); }
   /* one line per fact on computers */
-  @media (min-width: 961px) { .rabbi-facts li { font-size: clamp(.82rem, 1.2vw, .95rem); } }
+  @media (min-width: 961px) { .rabbi-text { padding-top: 28px; } .rabbi-text h2 { margin-bottom: 24px; } .rabbi-facts { grid-auto-rows: 1fr; gap: 7px; margin-bottom: 2px; } .rabbi-facts li { font-size: clamp(.82rem, 1.2vw, .95rem); } } /* equal rows keep the check marks evenly spaced */
   .book-mini { display: flex; gap: 16px; align-items: center; background: #fff; border-radius: 18px; padding: 14px; }
   .book-mini img { width: 64px; border-radius: 6px; }
   .book-mini b { display: block; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 1.2rem; }
