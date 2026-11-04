@@ -397,12 +397,8 @@
   .flare::before { content: ""; position: absolute; inset: 0; background: #fff8df; clip-path: polygon(50% 0, 53% 47%, 100% 50%, 53% 53%, 50% 100%, 47% 53%, 0 50%, 47% 47%); }
   @keyframes glass-flare { 0%, 38% { opacity: 0; transform: scale(.2) rotate(0); } 50% { opacity: 1; transform: scale(1) rotate(35deg); } 66%, 100% { opacity: 0; transform: scale(.3) rotate(70deg); } }
   .glass-box > .flare { right: 11%; top: 14%; translate: 0 0 calc(var(--d) / 2 + 1px); }
-  .plans-tag .flare { display: none; }
   @media (prefers-reduced-motion: reduce) { .glare, .flare { animation: none; } .glare { display: none; } }
-  .plans-soon { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; }
-  .plans-tag { filter: drop-shadow(0 10px 14px rgba(22,35,29,.4)); transform: rotate(-3deg); }
-  .plans-tag span { position: relative; display: block; padding: 10px 34px 13px 48px; background: var(--green-deep); color: #fff; font-family: "Instrument Serif", serif; font-style: italic; font-size: 2.7rem; line-height: 1.1; white-space: nowrap; clip-path: polygon(20px 0, 100% 0, 100% 100%, 20px 100%, 0 50%); }
-  .plans-tag span::before { content: ""; position: absolute; left: 24px; top: 50%; width: 11px; height: 11px; margin-top: -5px; border-radius: 50%; background: var(--yellow); }
+  .plans-star { display: none; }
   .plan { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 30px 26px; display: flex; flex-direction: column; }
   .plan .level { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
   .plan h3 { font-size: 2.1rem; margin: 6px 0 2px; }
@@ -438,15 +434,13 @@
   .join .row input { flex: 1; min-width: 0; padding: 14px 18px; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff; }
   @media (max-width: 900px) {
     .plans { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
-    /* phones: look straight into the box; the label stays in view while scrolling */
+    /* phones: look straight into the box; the star stays in view while scrolling */
     .plans-wrap { --d: 70px; width: 100%; max-width: 460px; margin: 44px auto 30px; perspective: 1000px; perspective-origin: 50% 50%; }
     .plans-wrap::after { display: none; }
     .glass-box { padding: 16px 14px; transform: none; }
-    .plans-soon { align-items: flex-start; }
-    .plans-tag { position: sticky; top: calc(50vh - 40px); margin: 120px 0; }
-    .plans-tag span { font-size: 2.2rem; }
     .glass-box > .flare { display: none; }
-    .plans-tag .flare { display: block; top: -56px; right: -14px; }
+    .plans-star { display: flex; position: absolute; inset: 0; justify-content: flex-end; align-items: flex-start; pointer-events: none; }
+    .plans-star .flare { position: sticky; top: calc(50vh - 120px); margin: 120px 30px 120px 0; }
   }
   @media (max-width: 560px) { .join .row { flex-direction: column; } }
 </style>
@@ -496,7 +490,7 @@
   <div class="wrap center">
     <span class="tag">3 membership plans</span>
     <h2>Coming <em>soon!</em></h2>
-    <!-- Remove the panes, .plans-soon and "inert" to take the plans out of the box once payment is connected -->
+    <!-- Remove the panes, flares and "inert" to take the plans out of the box once payment is connected -->
     <div class="plans-wrap">
     <div class="glass-box">
     <div class="pane back"></div><div class="pane floor"></div><div class="pane left"></div><div class="pane right"></div>
@@ -534,7 +528,7 @@
     </div>
     <div class="pane top"></div><div class="pane front"><i class="glare"></i></div><i class="flare"></i>
     </div>
-    <div class="plans-soon"><div class="plans-tag"><span>Coming soon</span><i class="flare"></i></div></div>
+    <div class="plans-star"><i class="flare"></i></div>
     </div>
   </div>
 </section>
