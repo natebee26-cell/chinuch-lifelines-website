@@ -214,6 +214,8 @@
   .news input { flex: 1; border: 0; background: transparent; color: #fff; padding: 0 16px; font: inherit; font-size: 16px; min-width: 0; }
   .news input::placeholder { color: rgba(255,255,255,.6); }
   .news .pill { padding: 12px 22px; white-space: nowrap; }
+  .signup-note { margin: 14px auto 0; font-weight: 600; } /* thank-you or error line under a sign-up form */
+  .signup-note a { color: inherit; text-decoration: underline; }
 
   footer { padding: 48px 0 110px; color: var(--muted); font-size: .9rem; }
   .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
@@ -420,7 +422,7 @@
       <span class="tag">Details coming soon</span>
       <h2>Interested in becoming a <em>Chinuch LifeLines Coach?</em></h2>
       <p class="lead">Enter your email &amp; we will get back to you with the details.</p>
-      <form class="row" id="coach-form">
+      <form class="row" id="coach-form" data-source="Mentor Training" data-thanks="Thank you! We'll get back to you with the details.">
         <label class="sr" for="coach-email">Email address</label>
         <input id="coach-email" name="email" type="email" placeholder="Your email address" required>
         <button class="pill pill-cta">Send</button>
@@ -429,14 +431,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  // Until a mailing service is connected, the request arrives by email.
-  document.getElementById('coach-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    location.href = 'mailto:admin@chinuch-lifelines.org?subject=' + encodeURIComponent('Becoming a Chinuch LifeLines Coach') + '&body=' + encodeURIComponent('Please send me the details. My email: ' + e.target.email.value);
-  });
-</script>
 
 <footer id="contact">
   <div class="wrap">
@@ -448,5 +442,6 @@
     <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
   </div>
 </footer>
+<script src="assets/signup.js?v=1"></script>
 </body>
 </html>

@@ -214,6 +214,8 @@
   .news input { flex: 1; border: 0; background: transparent; color: #fff; padding: 0 16px; font: inherit; font-size: 16px; min-width: 0; }
   .news input::placeholder { color: rgba(255,255,255,.6); }
   .news .pill { padding: 12px 22px; white-space: nowrap; }
+  .signup-note { margin: 14px auto 0; font-weight: 600; } /* thank-you or error line under a sign-up form */
+  .signup-note a { color: inherit; text-decoration: underline; }
 
   footer { padding: 48px 0 110px; color: var(--muted); font-size: .9rem; }
   .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
@@ -495,7 +497,7 @@
     <div class="join">
       <h2>Sign <em>up</em></h2>
       <p class="lead">B"H, these programs will be launched soon. Please enter your email below so we can notify you when they begin.</p>
-      <form id="join-form">
+      <form id="join-form" data-source="Membership" data-thanks="Thank you! We'll let you know when the programs begin.">
         <fieldset class="choose">
           <legend class="sr">Choose a plan</legend>
           <label><input type="radio" name="plan" value="Basic" checked><span>Basic (free)</span></label>
@@ -526,12 +528,6 @@
   // membership.html?plan=Basic preselects a plan (used by the front page)
   const fromUrl = new URLSearchParams(location.search).get('plan');
   if (fromUrl) pick(fromUrl);
-  // Until the mailing service is connected, the sign-up arrives by email with the plan in the subject.
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const plan = form.plan.value;
-    location.href = 'mailto:admin@chinuch-lifelines.org?subject=' + encodeURIComponent('Membership sign-up: ' + plan + ' plan') + '&body=' + encodeURIComponent('Plan: ' + plan + '\nEmail: ' + form.email.value);
-  });
 </script>
 
 <footer id="contact">
@@ -544,5 +540,6 @@
     <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
   </div>
 </footer>
+<script src="assets/signup.js?v=1"></script>
 </body>
 </html>
