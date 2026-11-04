@@ -194,6 +194,9 @@
   .video .frame { aspect-ratio: 16/10; border-radius: 22px; background: #0d1512 url("assets/pme-title.webp") center / cover no-repeat; display: grid; place-items: center; position: relative; overflow: hidden; }
   .video .frame::after { content: ""; position: absolute; inset: 0; background: rgba(13,21,18,.15); transition: background .2s ease; }
   .video:hover .frame::after { background: rgba(13,21,18,0); }
+  .video .frame.player { position: relative; overflow: hidden; aspect-ratio: 16/9; background: #0d1512; }
+  .video .frame.player::after { display: none; }
+  .video .frame.player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video .play { position: relative; z-index: 1; }
   .video .tipno { position: absolute; z-index: 1; top: 12px; left: 12px; background: var(--yellow); color: var(--green-deep); font-size: .74rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
   .video h3 { font-weight: 600; }
@@ -706,7 +709,7 @@
     <h2>Parenting Made <em>Easier!</em></h2>
     <p class="lead">Short weekly video tips from Rabbi Brezak, to make parenting easier for you. Watch this free sample tip.</p>
     <div class="videos one">
-      <a href="https://vimeo.com/1240041060" target="_blank" rel="noopener" class="video"><div class="frame"><span class="tipno">Tip #1</span><span class="play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0l20 11L0 22z" fill="#1e5a43"/></svg></span></div><h3>Where Are You Going?</h3></a>
+      <div class="video"><div class="frame player"><iframe src="https://player.vimeo.com/video/1243465882?title=0&amp;byline=0&amp;portrait=0" title="Tip #1: Where Are You Going?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><h3>Where Are You Going?</h3><p class="micro" style="margin:4px 0 0">Can't see the video? <a href="https://vimeo.com/1243465882" target="_blank" rel="noopener" style="text-decoration:underline">Watch it on Vimeo</a></p></div>
     </div>
   </div>
 </section>
