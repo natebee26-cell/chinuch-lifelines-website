@@ -1,9 +1,7 @@
-// Sign-up forms: each email is saved to the Google Sheet with the form it came from.
-// If the sheet can't be reached, the visitor gets a link to email us instead.
+// Sign-up forms: each email goes straight to the form's own Jotform list.
+// If Jotform can't be reached, the visitor gets a link to email us instead.
 (() => {
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJ365W0KEqONAD742x3JsFEyXbYM7Dln9PFwKeLPMB4RaUfW4nyp4DDcRGBxOsWe3GTQ/exec'; // the Google Sheet's web app address; while empty, forms open an email as before
-
-  document.querySelectorAll('form[data-source]').forEach((form) => {
+  document.querySelectorAll('form[data-jotform]').forEach((form) => {
     const button = form.querySelector('button');
     const label = button.textContent;
     const note = document.createElement('p');
@@ -14,10 +12,12 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const id = form.dataset.jotform;
       const email = form.email.value.trim();
       const source = form.dataset.source + (form.plan ? ': ' + form.plan.value : '');
       const mail = 'mailto:admin@chinuch-lifelines.org?subject=' + encodeURIComponent('Sign-up: ' + source) + '&body=' + encodeURIComponent('My email: ' + email);
-      if (!SHEET_URL) { location.href = mail; return; }
+      const data = new URLSearchParams({ formID: id, q3_email: email });
+      if (form.plan) data.set('q5_plan', form.plan.value);
 
       button.disabled = true;
       button.textContent = 'Saving…';
@@ -25,8 +25,8 @@
       const stop = new AbortController();
       const timer = setTimeout(() => stop.abort(), 12000);
       try {
-        const res = await fetch(SHEET_URL, { method: 'POST', body: new URLSearchParams({ email, source }), signal: stop.signal });
-        if ((await res.text()).trim() !== 'ok') throw new Error('not saved');
+        const res = await fetch('https://submit.jotform.com/submit/' + id + '/', { method: 'POST', body: data, signal: stop.signal });
+        if (!res.ok || !/thank/i.test(await res.text())) throw new Error('not saved');
         note.textContent = form.dataset.thanks;
         form.email.value = '';
       } catch {
