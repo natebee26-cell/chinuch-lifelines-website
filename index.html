@@ -79,7 +79,7 @@
   .mobile-menu { display: none; position: absolute; z-index: 4; top: 96px; left: 16px; right: 16px; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 20px 40px -16px rgba(0,0,0,.4); }
   .mobile-menu.open { display: block; }
   .mobile-menu a { display: block; padding: 14px 16px; border-radius: 14px; font-weight: 500; }
-  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 310px; align-items: center; gap: 40px; padding: 10px 56px 18px; color: #fff; }
+  .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 816px) minmax(310px, 1fr); align-items: center; padding: 10px 0 18px 56px; color: #fff; } /* book column fills the space from the text to the page edge */
   .hero-content .eyebrow { font-size: .82rem; color: var(--yellow); font-weight: 600; margin-bottom: 8px; }
   .hero-content h1 { font-size: clamp(2.4rem, 4.2vw, 3.5rem); }
   .hero-content h1 em { font-size: 1.18em; line-height: 1; }
@@ -89,7 +89,8 @@
   .proof .avatars { display: flex; }
   .proof .avatars span { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--green-deep); margin-left: -8px; display: grid; place-items: center; font-size: .72rem; font-weight: 700; color: var(--green-deep); }
   .proof .avatars span:first-child { margin-left: 0; }
-  .hero-cover { justify-self: center; width: min(245px, 100%); margin-top: -72px; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; }
+  .hero-cover { justify-self: center; width: min(245px, 100%); margin-top: -91px; margin-bottom: 19px; /* equal gap under the menu and under the button */ z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; }
+  @media (min-width: 961px) and (max-width: 1100px) { .hero-cover { margin-top: -36px; margin-bottom: 8px; } } /* smaller logo here: keep the book clear of the menu */
   .hero-cover img { width: 100%; filter: drop-shadow(0 30px 30px rgba(0,0,0,.55)); transform: rotate(3deg); transition: transform .3s ease; }
   /* Book sways gently back and forth; pauses under the pointer */
   .hero-cover img { animation: book-sway 4s ease-in-out infinite; transform-origin: 50% 90%; }
