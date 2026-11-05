@@ -357,11 +357,12 @@
 
   /* A–Z pathways */
   /* two lines: the full course above, each pathway below */
-  .pw-choice { display: grid; justify-items: center; gap: 38px; }
+  .pw-choice { display: grid; justify-items: center; gap: 14px; }
+  .pw-or { font-size: .72em; color: var(--muted); }
   .pw-choice > span { display: inline-flex; align-items: center; gap: 14px; }
   .arrow-dot { flex: none; width: .9em; height: .9em; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
   .arrow-dot svg { width: 58%; height: 58%; fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
-  @media (max-width: 560px) { .pw-choice { font-size: 1.85rem; gap: 26px; } .pw-choice > span { gap: 10px; } }
+  @media (max-width: 560px) { .pw-choice { font-size: 1.85rem; gap: 10px; } .pw-choice > span { gap: 10px; } }
   .pathways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; text-align: left; }
   .pathway { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
   .pw-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
@@ -461,7 +462,8 @@
   <div class="wrap center">
     <h2 class="pw-choice">
       <span><span class="arrow-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>Purchase the full course</span>
-      <span><em>or each pathway separately</em><span class="arrow-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span></span>
+      <em class="pw-or">or</em>
+      <span><em>Each pathway separately</em><span class="arrow-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span></span>
     </h2>
     <div class="pathways">
       <article class="pathway">
