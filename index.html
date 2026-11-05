@@ -216,7 +216,7 @@
   .quotes-set { display: flex; flex: none; gap: 12px; padding-right: 12px; }
   .quotes-set .quote { flex: none; width: 340px; }
   @media (max-width: 560px) { .quotes-set .quote { width: 280px; } }
-  @media (max-width: 760px) { .phone-order { display: flex; flex-direction: column; } .phone-order .personal { order: 1; padding-top: 0; } .phone-order .reviews { order: 2; } } /* phones: Rabbi, then Personal guidance, then reviews */
+  @media (max-width: 760px) { .phone-order { display: flex; flex-direction: column; } .phone-order .personal { order: 1; padding: 0 0 34px; } .phone-order .reviews { order: 2; } } /* phones: Rabbi, then Personal guidance, then reviews */
   .reviews .lead { color: rgba(255,255,255,.7); }
   .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .9rem; color: rgba(255,255,255,.8); }
   .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
@@ -252,8 +252,13 @@
   .other a:hover { transform: translateY(-3px); }
   .other a:nth-child(1) { background: var(--peach); }
   .other a:nth-child(2) { background: var(--lav); }
-  .other.one { grid-template-columns: minmax(0, 520px); justify-content: center; }
-  .other.one a { align-items: center; text-align: center; }
+  .other.one { grid-template-columns: minmax(0, 780px); justify-content: center; margin-top: 18px; }
+  .other.one a { align-items: center; text-align: center; padding: 34px 28px; }
+  .other.one h3 { font-size: clamp(2rem, 4vw, 2.7rem); }
+  .other.one p { font-size: 1.2rem; }
+  .other.one .go { font-size: 1.2rem; }
+  .personal { padding: 30px 0 0; }
+  @media (min-width: 761px) { #rabbi { padding-top: 30px; } }
   .other h3 { font-size: 1.8rem; }
   .other p { margin: 0; color: var(--muted); }
   .other .go { font-weight: 600; color: var(--green); margin-top: 8px; }
