@@ -16,7 +16,8 @@
       const email = form.email.value.trim();
       const source = form.dataset.source + (form.plan ? ': ' + form.plan.value : '');
       const mail = 'mailto:admin@chinuch-lifelines.org?subject=' + encodeURIComponent('Sign-up: ' + source) + '&body=' + encodeURIComponent('My email: ' + email);
-      const data = new URLSearchParams({ formID: id, q3_email: email });
+      const data = new URLSearchParams({ formID: id });
+      form.querySelectorAll('[data-q]').forEach((field) => data.set(field.dataset.q, field.value.trim()));
       if (form.plan) data.set('q5_plan', form.plan.value);
 
       button.disabled = true;
@@ -28,7 +29,7 @@
         const res = await fetch('https://submit.jotform.com/submit/' + id + '/', { method: 'POST', body: data, signal: stop.signal });
         if (!res.ok || !/thank/i.test(await res.text())) throw new Error('not saved');
         note.textContent = form.dataset.thanks;
-        form.email.value = '';
+        form.querySelectorAll('[data-q]').forEach((field) => { field.value = ''; });
       } catch {
         const link = document.createElement('a');
         link.href = mail;
