@@ -318,13 +318,13 @@
   .webs { display: flex; gap: 14px; width: max-content; padding: 6px 0 10px; will-change: transform; }
   .wimg { -webkit-user-drag: none; }
   .web { width: 310px; flex-shrink: 0; background: #fff; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px; border-top: 5px solid var(--mint); align-self: flex-start; transition: transform .2s ease, box-shadow .2s ease; }
-  .web:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -20px rgba(22,35,29,.4); }
+  @media (hover: hover) { .web:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -20px rgba(22,35,29,.4); } } /* mouse only, so a tap on a phone doesn't leave a card stuck in its hover state */
   .web:nth-child(3n+2) { border-top-color: var(--butter); }
   .web:nth-child(3n+3) { border-top-color: var(--lav); }
   .wtop { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; } /* keeps the number above the picture when it grows on hover */
   .wnum { font-family: "Instrument Serif", serif; font-size: 1.3rem; color: var(--muted); }
   .wimg { width: 100%; height: 270px; object-fit: contain; margin: -22px 0 -38px; transition: transform .25s ease; }
-  .web:hover .wimg { transform: scale(1.04) rotate(-1deg); }
+  @media (hover: hover) { .web:hover .wimg { transform: scale(1.04) rotate(-1deg); } }
   .web h3 { font-size: 1.65rem; min-height: 2.1em; }
   .wmeta { font-size: .82rem; color: var(--muted); }
   .web details { border: 0; background: var(--cream); border-radius: 14px; padding: 0 14px; }
