@@ -360,7 +360,7 @@
   .pw-choice { display: grid; justify-items: center; gap: 14px; }
   .pw-or { font-size: .72em; color: var(--muted); }
   #pathways { padding-top: 52px; } /* same space above and below the heading */
-  #pathways .pathways { margin-top: 52px; }
+  #pathways .pk-list { margin-top: 52px; }
   .pw-choice > span { display: inline-flex; align-items: center; gap: 14px; }
   .arrow-dot { flex: none; width: .9em; height: .9em; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
   .arrow-dot svg { width: 58%; height: 58%; fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -379,6 +379,7 @@
   @media (max-width: 1024px) { .pathways { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .pathways { grid-template-columns: 1fr; } .book { width: 200px; } .book .cover, .book img { height: 250px; } .book .cover { margin-bottom: 70px; } }
 </style>
+<link rel="stylesheet" href="assets/picklist.css?v=3">
 </head>
 <body>
 
@@ -467,72 +468,41 @@
       <em class="pw-or">or</em>
       <span><em>Each pathway separately</em><span class="arrow-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span></span>
     </h2>
-    <div class="pathways">
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-1.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 1</span>
-        <h3>Chinuch</h3>
-        <p class="pw-meta">2 classes</p>
-        <details><summary>See more</summary><ol><li>Is it different today? Why and how</li><li>Then and Now: replace harshness and fighting with acceptance, trust and the positive pathways</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-2.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 2</span>
-        <h3>Love</h3>
-        <p class="pw-meta">4 classes</p>
-        <details><summary>See more</summary><ol><li>3 languages / 3 minimums</li><li>Actions Speak + Real Feel</li><li>Child Before Chinuch</li><li>Default and how</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-3.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 3</span>
-        <h3>Positive</h3>
-        <p class="pw-meta">6 classes</p>
-        <details><summary>See more</summary><ol><li>Positivising: why and how</li><li>On Credit / Hijacking</li><li>For Granted</li><li>Setting Up for Success</li><li>Partial Success / Lack of Negative = Positive</li><li>Correcting Correctly</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-4.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 4</span>
-        <h3>Discipline</h3>
-        <p class="pw-meta">3 classes</p>
-        <details><summary>See more</summary><ol><li>2 Types of children / Experiment with AIG</li><li>3 C’s / Consistency</li><li>Ages and Stages / putting Discipline in its place</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-5.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 5</span>
-        <h3>The Difficult Child: Reactive Tools</h3>
-        <p class="pw-meta">7 classes</p>
-        <details><summary>See more</summary><ol><li>Love as a reactive tool / Giving over Control</li><li>U Priority</li><li>Explain the Gain</li><li>Making it Easier</li><li>Discussion</li><li>Chutzpah Part 1</li><li>Chutzpah Part 2</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-6.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 6</span>
-        <h3>Peaceful (Sibling Rivalry)</h3>
-        <p class="pw-meta">6 classes</p>
-        <details><summary>See more</summary><ol><li>True Chinuch (including 7 exceptions)</li><li>Practicing</li><li>Teaching</li><li>Motivating</li><li>Methods for victims</li><li>Building the Bully and Jealousy</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-7.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 7</span>
-        <h3>Strong Mother</h3>
-        <p class="pw-meta">8 classes</p>
-        <details><summary>See more</summary><ol><li>Empowered Mother</li><li>Negative Attention: Types of Button Pressing</li><li>Negative Attention: the Child’s angle</li><li>Solutions</li><li>I am Stuck</li><li>The Discouraged Child</li><li>Misplaced Pity</li><li>Spoiling</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
-      <article class="pathway">
-        <img class="pw-img" src="assets/pathways/pathway-8.jpg" alt="" loading="lazy">
-        <span class="pw-no">Pathway 8</span>
-        <h3>Love for Yiddishkeit</h3>
-        <p class="pw-meta">5 classes</p>
-        <details><summary>See more</summary><ol><li>Shabbos Table Part 1</li><li>Shabbos Table Part 2</li><li>Davening Part 1</li><li>Davening Part 2</li><li>Emunah</li></ol></details>
-        <div class="pw-buy"><span class="pw-price">$19.99</span><a href="https://form.jotform.com/231416619584158" target="_blank" rel="noopener" class="pill pill-dark">Buy →</a></div>
-      </article>
+    <div class="pk-list" id="pk-pathways" data-form="https://form.jotform.com/231416619584158" data-price="19.99" data-bar="pk-pathways-bar">
+      <div class="pk-row" data-pid="1000">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Chinuch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p01"><img class="pk-thumb" src="assets/pathways/pathway-1.jpg" alt="" loading="lazy"><span class="pk-num">01</span><span class="pk-ttl">Chinuch</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p01" hidden><img class="pk-big wide" src="assets/pathways/pathway-1.jpg" alt="" loading="lazy"><div><h3>Chinuch</h3><div class="pk-meta">2 classes</div><ol><li>Is it different today? Why and how</li><li>Then and Now: replace harshness and fighting with acceptance, trust and the positive pathways</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1000" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1001">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Love"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p02"><img class="pk-thumb" src="assets/pathways/pathway-2.jpg" alt="" loading="lazy"><span class="pk-num">02</span><span class="pk-ttl">Love</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p02" hidden><img class="pk-big wide" src="assets/pathways/pathway-2.jpg" alt="" loading="lazy"><div><h3>Love</h3><div class="pk-meta">4 classes</div><ol><li>3 languages / 3 minimums</li><li>Actions Speak + Real Feel</li><li>Child Before Chinuch</li><li>Default and how</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1001" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1002">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Positive"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p03"><img class="pk-thumb" src="assets/pathways/pathway-3.jpg" alt="" loading="lazy"><span class="pk-num">03</span><span class="pk-ttl">Positive</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p03" hidden><img class="pk-big wide" src="assets/pathways/pathway-3.jpg" alt="" loading="lazy"><div><h3>Positive</h3><div class="pk-meta">6 classes</div><ol><li>Positivising: why and how</li><li>On Credit / Hijacking</li><li>For Granted</li><li>Setting Up for Success</li><li>Partial Success / Lack of Negative = Positive</li><li>Correcting Correctly</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1002" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1003">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Discipline"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p04"><img class="pk-thumb" src="assets/pathways/pathway-4.jpg" alt="" loading="lazy"><span class="pk-num">04</span><span class="pk-ttl">Discipline</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p04" hidden><img class="pk-big wide" src="assets/pathways/pathway-4.jpg" alt="" loading="lazy"><div><h3>Discipline</h3><div class="pk-meta">3 classes</div><ol><li>2 Types of children / Experiment with AIG</li><li>3 C’s / Consistency</li><li>Ages and Stages / putting Discipline in its place</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1003" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1004">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick The Difficult Child: Reactive Tools"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p05"><img class="pk-thumb" src="assets/pathways/pathway-5.jpg" alt="" loading="lazy"><span class="pk-num">05</span><span class="pk-ttl">The Difficult Child: Reactive Tools</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p05" hidden><img class="pk-big wide" src="assets/pathways/pathway-5.jpg" alt="" loading="lazy"><div><h3>The Difficult Child: Reactive Tools</h3><div class="pk-meta">7 classes</div><ol><li>Love as a reactive tool / Giving over Control</li><li>U Priority</li><li>Explain the Gain</li><li>Making it Easier</li><li>Discussion</li><li>Chutzpah Part 1</li><li>Chutzpah Part 2</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1004" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1006">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Peaceful (Sibling Rivalry)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p06"><img class="pk-thumb" src="assets/pathways/pathway-6.jpg" alt="" loading="lazy"><span class="pk-num">06</span><span class="pk-ttl">Peaceful (Sibling Rivalry)</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p06" hidden><img class="pk-big wide" src="assets/pathways/pathway-6.jpg" alt="" loading="lazy"><div><h3>Peaceful (Sibling Rivalry)</h3><div class="pk-meta">6 classes</div><ol><li>True Chinuch (including 7 exceptions)</li><li>Practicing</li><li>Teaching</li><li>Motivating</li><li>Methods for victims</li><li>Building the Bully and Jealousy</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1006" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1007">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Strong Mother"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p07"><img class="pk-thumb" src="assets/pathways/pathway-7.jpg" alt="" loading="lazy"><span class="pk-num">07</span><span class="pk-ttl">Strong Mother</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p07" hidden><img class="pk-big wide" src="assets/pathways/pathway-7.jpg" alt="" loading="lazy"><div><h3>Strong Mother</h3><div class="pk-meta">8 classes</div><ol><li>Empowered Mother</li><li>Negative Attention: Types of Button Pressing</li><li>Negative Attention: the Child’s angle</li><li>Solutions</li><li>I am Stuck</li><li>The Discouraged Child</li><li>Misplaced Pity</li><li>Spoiling</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1007" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
+      <div class="pk-row" data-pid="1008">
+        <div class="pk-hrow"><button class="pk-pick" type="button" aria-pressed="false" aria-label="Pick Love for Yiddishkeit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button><button class="pk-head" type="button" aria-expanded="false" aria-controls="pk-p08"><img class="pk-thumb" src="assets/pathways/pathway-8.jpg" alt="" loading="lazy"><span class="pk-num">08</span><span class="pk-ttl">Love for Yiddishkeit</span><span class="pk-plus" aria-hidden="true">+</span></button></div>
+        <div class="pk-body" id="pk-p08" hidden><img class="pk-big wide" src="assets/pathways/pathway-8.jpg" alt="" loading="lazy"><div><h3>Love for Yiddishkeit</h3><div class="pk-meta">5 classes</div><ol><li>Shabbos Table Part 1</li><li>Shabbos Table Part 2</li><li>Davening Part 1</li><li>Davening Part 2</li><li>Emunah</li></ol><div class="pk-buy"><span class="pk-price">$19.99</span><a href="https://form.jotform.com/231416619584158?myProducts[][id]=1008" target="_blank" rel="noopener" class="pill pill-dark">Buy now →</a></div></div></div>
+      </div>
     </div>
+    <div class="pk-bar" id="pk-pathways-bar" hidden><span></span><button class="pk-clear" type="button" data-list="pk-pathways">Clear</button><a href="#" target="_blank" rel="noopener">Buy selected →</a></div>
   </div>
 </section>
 
@@ -546,5 +516,6 @@
     <div class="copy">© 2026 Chinuch LifeLines. All rights reserved.</div>
   </div>
 </footer>
+<script src="assets/picklist.js?v=1"></script>
 </body>
 </html>
