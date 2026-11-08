@@ -7,7 +7,7 @@ New site for chinuch-lifelines.org. Static HTML, no build step.
 - `membership.html` — the 3 membership plans and sign-up.
 - `consult.html` — consultation request.
 - `mentor-training.html` — become a coach.
-- `for-later.html` — private parking page for set-aside sections (not linked, noindex).
+- `drafts/` (kept out of git, never published) — style drafts and `for-later.html`, the parking page for set-aside sections.
 - `assets/` — all images live here; nothing is loaded from the old GoDaddy site.
 - `assets/signup.js` — sends every sign-up form to its own Jotform list (falls back to an email link).
 - `CNAME` — custom domain for hosting.
