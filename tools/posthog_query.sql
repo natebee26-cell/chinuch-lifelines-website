@@ -1,0 +1,12 @@
+SELECT 'total' AS kind, '' AS label, '' AS sub, count() AS n, uniq(person_id) AS users, toFloat(uniq(properties.$session_id)) AS val FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageview'
+UNION ALL SELECT 'day', toString(toDate(timestamp)), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageview' GROUP BY toDate(timestamp)
+UNION ALL SELECT 'page', coalesce(properties.$pathname, ''), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageview' GROUP BY properties.$pathname
+UNION ALL SELECT 'pagetime', coalesce(properties.$prev_pageview_pathname, ''), '', count(), uniq(person_id), toFloat(avg(toFloat(properties.$prev_pageview_duration))) FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageleave' GROUP BY properties.$prev_pageview_pathname
+UNION ALL SELECT 'source', if(coalesce(properties.$referring_domain, '') IN ('', '$direct'), 'Direct / typed in', properties.$referring_domain), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageview' GROUP BY 2
+UNION ALL SELECT 'device', coalesce(properties.$device_type, 'Unknown'), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$pageview' GROUP BY 2
+UNION ALL SELECT 'click', coalesce(properties.cta, ''), coalesce(properties.webinar, properties.plan, properties.label, ''), count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = 'cta_click' GROUP BY 2, 3
+UNION ALL SELECT 'hover', coalesce(properties.webinar, ''), '', count(), uniq(person_id), toFloat(avg(toFloat(properties.seconds))) FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = 'webinar_hover' GROUP BY 2
+UNION ALL SELECT 'details', coalesce(properties.webinar, ''), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = 'webinar_details_opened' GROUP BY 2
+UNION ALL SELECT 'section', coalesce(properties.page, ''), coalesce(properties.section, ''), count(), uniq(person_id), toFloat(sum(toFloat(properties.seconds))) FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = 'section_time' GROUP BY 2, 3
+UNION ALL SELECT 'rage', coalesce(properties.$pathname, ''), '', count(), uniq(person_id), 0.0 FROM events WHERE timestamp >= now() - INTERVAL {{days}} DAY AND event = '$rageclick' GROUP BY 2
+LIMIT 500
