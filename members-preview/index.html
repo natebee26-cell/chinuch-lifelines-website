@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Members Area Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Single-look page: mirrors the Chinuch LifeLines site palette */
+  :root { --cream: #fbf8f1; --ink: #1f2a24; --muted: #5e6a63; --green: #1e5a43; --deep: #16231d; --yellow: #f2c14e; --line: #e6e1d4; color-scheme: light; }
+  body { background: var(--deep); color: #fff; font-family: Inter, system-ui, sans-serif; margin: 0; }
+  .wrap { max-width: 760px; margin: 0 auto; padding-block: 48px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 22px; }
+  img.logo { width: min(300px, 80%); height: auto; }
+  h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; margin: 0; text-wrap: balance; }
+  h1 em { color: var(--yellow); }
+  p { margin: 0; color: rgba(255,255,255,.82); line-height: 1.6; font-size: 1.05rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .pill { display: inline-flex; padding: 14px 24px; border-radius: 999px; font-weight: 600; text-decoration: none; }
+  .cta { background: var(--yellow); color: var(--deep); }
+  .ghost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
+  .pill:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+  ol { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; color: rgba(255,255,255,.85); line-height: 1.5; }
+  ol b { color: #fff; }
+  .note { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 18px 20px; font-size: .95rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="../assets/logo-light.webp" width="1123" height="363" alt="Chinuch LifeLines">
+  <h1>Members area preview, <em>click through it like a parent would</em></h1>
+  <p>This is a working mock-up of the new members area. Videos, tips and session dates are sample content, and no payments are connected.</p>
+  <div class="actions">
+    <a class="pill cta" href="membership.html">Start on the membership page</a>
+    <a class="pill ghost" href="login.html">Go straight to login</a>
+  </div>
+  <ol>
+    <li>Tap <b>Member login</b> in the site's top menu, then <b>Join free</b>.</li>
+    <li>Watch video 1 and tick off that week's work plan steps. Your progress is remembered.</li>
+    <li>Use the <b>Basic / Premium / Platinum</b> switch in the yellow bar to see each plan's pages.</li>
+  </ol>
+  <p class="note">Progress you make is saved only in your own browser while you preview.</p>
+</div>
+</body>
+</html>
